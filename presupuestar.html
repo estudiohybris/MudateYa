@@ -69,7 +69,7 @@
         <a class="navbar-brand" href="#">
             <img src="./assets/images/logo.png" class="img-fluid" alt="Logo" style="height: 38px !important;">
         </a>
-        <p class="font-weight-bold mb-0">¡Hola Natalia!</p>
+        <p class="font-weight-bold mb-0">¡Hola <span id="firstName"></span>!</p>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -88,7 +88,7 @@
     <main class="container-fluid">
 
         <section class="row bg-light py-4" style="min-height: calc(100vh - 64px);">
-            <div id="steps" class="col-5 offset-2">
+            <div id="steps" class="col-10 offset-1 col-md-7 offset-md-0 col-lg-6 offset-lg-1 col-xl-5 offset-xl-2">
                 <div id="step0">
                     <h2>¡Bienvenido!</h2>
                     <p>Primero queremos conocerte...</p>
@@ -112,7 +112,7 @@
                     </div>
                 </div>
                 <div id="step1" style="display: none">
-                    <p>Hola Natalia! ¿A dónde te vas a mudar hoy?</p>
+                    <p>Hola <span class="userName"></span>! ¿A dónde te vas a mudar hoy?</p>
                     <p>Primero ingresa los datos de origen de la mudanza.</p>
                     <h2>¿Cuál es la dirección de origen?</h2> 
                     <div class="card">
@@ -137,14 +137,18 @@
                                 <div class="form-group col-md-6">
                                     <label for="selectCheckInLocation">Localidad</label>
                                     <select class="form-control" id="selectCheckInLocation" required>
-                                        <option>Palermo</option>
-                                        <option>Recoleta</option>
+                                        <option value="0" disabled selected>Selecciona la localidad...</option>
+                                        <option value="1">Palermo</option>
+                                        <option value="2">Recoleta</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="selectCheckInProvince">Provincia</label>
                                     <select class="form-control" id="selectCheckInProvince" required>
-                                        <option>Ciudad Autónoma de Buenos Aires</option>
+                                        <option value="0" disabled selected>Selecciona la provincia...</option>
+                                        <option value="1">Ciudad Autónoma de Buenos Aires</option>
+                                        <option value="2">Buenos Aires</option>
+                                        <option value="3">Santa Fe</option>
                                     </select>
                                 </div>
                             </div>
@@ -169,7 +173,7 @@
                     </div>
                 </div>
                 <div id="step3" style="display: none">
-                    <p>¡Muy bien Natalia! Ahora debes ingresar los datos de destino de la mudanza.</p>
+                    <p>¡Muy bien <span class="userName"></span>!! Ahora debes ingresar los datos de destino de la mudanza.</p>
                     <h2>¿Cuál es la dirección de destino?</h2> 
                     <div class="card">
                         <div class="card-body">
@@ -193,14 +197,18 @@
                                 <div class="form-group col-md-6">
                                     <label for="selectCheckOutLocation">Localidad</label>
                                     <select class="form-control" id="selectCheckOutLocation" required>
-                                        <option>Palermo</option>
-                                        <option>Recoleta</option>
+                                        <option value="0" disabled selected>Selecciona la localidad...</option>
+                                        <option value="1">Palermo</option>
+                                        <option value="2">Recoleta</option>
                                     </select>
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label for="selectCheckOutProvince">Provincia</label>
                                     <select class="form-control" id="selectCheckOutProvince" required>
-                                        <option>Ciudad Autónoma de Buenos Aires</option>
+                                        <option value="0" disabled selected>Selecciona la provincia...</option>
+                                        <option value="1">Ciudad Autónoma de Buenos Aires</option>
+                                        <option value="2">Buenos Aires</option>
+                                        <option value="3">Santa Fe</option>
                                     </select>
                                 </div>
                             </div>
@@ -227,42 +235,42 @@
                 <div id="step5" style="display: none">
                     <p>¡Excelente! ya falta poco...</p>
                     <h2>¿Qué tipo de camión necesitas?</h2> 
-                    <div class="btn-group btn-group-lg w-100" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                    <div class="btn-group btn-group-lg w-100" role="group" aria-label="Basic example" id="selectTruckType">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center" value="1">
                             <img src="./assets/images/select-car.svg" class="img-fluid" alt="Seleccioná el tipo de camión." style="width: auto; height: 100px;">
                             Chico
                         </button>
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center" value="2">
                             <img src="./assets/images/select-car.svg" class="img-fluid" alt="Seleccioná el tipo de camión." style="width: auto; height: 100px;">
                             Grande
                         </button>
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center" value="3">
                             <img src="./assets/images/select-car.svg" class="img-fluid" alt="Seleccioná el tipo de camión." style="width: auto; height: 100px;">
                             Extra Grande
                         </button>
                     </div>
                 </div>
                 <div id="step6" style="display: none">
-                    <p>¡Último paso Natalia!</p>
+                    <p>¡Último paso <span class="userName"></span>!!</p>
                     <h2>¿Qué servicio adicional necesitas?</h2> 
-                    <div class="btn-group btn-group-lg w-100" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                    <div class="btn-group btn-group-lg w-100" role="group" aria-label="Basic example" id="selectServiceType">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center">
                             Empaque
                         </button>
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center">
                             Desempaque
                         </button>
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center">
                             Ambos
                         </button>
-                        <button type="button" class="btn btn-primary d-flex flex-column align-items-center">
+                        <button type="button" class="btn btn-light d-flex flex-column align-items-center">
                             Ninguno
                         </button>
                     </div>
                 </div>
-                <button class="btn btn-primary mt-4" onclick="next()">Siguiente</button>
+                <button class="btn btn-primary my-4" onclick="next()">Siguiente</button>
             </div>
-            <div class="col-3">
+            <div class="col-10 offset-1 col-md-5 offset-md-0 col-lg-4 col-xl-3">
                 <div class="card">
                     <div class="card-header">
                         Presupuestar
@@ -276,8 +284,7 @@
                                 <small class="mb-0 ml-2">Tú nombre</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">Natalia</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 userName"></p>
                             </div>
                         </div>
                         <div>
@@ -288,8 +295,7 @@
                                 <small class="mb-0 ml-2">Dirección de origen</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">Av. 9 de Julio 25894 1°B</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 checkInAddress"></p>
                             </div>
                         </div>
                         <div>
@@ -300,8 +306,7 @@
                                 <small class="mb-0 ml-2">Fecha de origen</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">15/06/2020 10:00</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 checkInDate"></p>
                             </div>
                         </div>
                         <div>
@@ -312,8 +317,7 @@
                                 <small class="mb-0 ml-2">Dirección de destino</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">Av. Corrientes 25894 1°B</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 checkOutAddress"></p>
                             </div>
                         </div>
                         <div>
@@ -324,8 +328,7 @@
                                 <small class="mb-0 ml-2">Fecha de destino</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">16/06/2020 14:30</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 checkOutDate"></p>
                             </div>
                         </div>
                         <div>
@@ -336,8 +339,7 @@
                                 <small class="mb-0 ml-2">Tipo de Camión</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">Chico</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 truckType"></p>
                             </div>
                         </div>
                         <div>
@@ -348,8 +350,7 @@
                                 <small class="mb-0 ml-2">Servicio Adicional</small>
                             </div>
                             <div class="d-flex flex-row justify-content-between border-left ml-3 my-2"style="height: 2rem;">
-                                <p class="font-weight-bold mb-0 ml-4">Ninguno</p>
-                                <a href="#" class="text-primary">Editar</a>
+                                <p class="font-weight-bold mb-0 ml-4 serviceType"></p>
                             </div>
                         </div>
                     </div>
@@ -359,12 +360,27 @@
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-body text-center">
-                                        <h2>¡Felicitaciones Natalia</h2>
+                                        <p>El presupuesto total es de:</p>
+                                        <h2 id="totalPrice"></h2>
+                                        <p>¿Aceptas el presupuesto?</p>
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                                        <a class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalSuccessfylly" data-dismiss="modal">Aceptar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modalSuccessfylly" tabindex="-1" role="dialog" aria-labelledby="modalSuccessfyllyLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body text-center">
+                                        <h2>¡Felicitaciones <span class="userName"></span>!</h2>
                                         <p>La mudanza ha sido confirmada.</p>
                                     </div>
                                     <div class="modal-footer d-flex justify-content-center">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        <a href="./index.html" class="btn btn-primary">Aceptar</a>
+                                        <a href="./index.html" class="btn btn-primary text-light">Aceptar</a>
                                     </div>
                                 </div>
                             </div>
