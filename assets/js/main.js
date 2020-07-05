@@ -1,191 +1,587 @@
 // [] Array
 // {} Objeto
 
-// Precios Provincias
-var amountProvinceCABA = 500;
-var amountProvinceBS = 500;
-var amountProvinceSF = 2500;
+// VARIABLES -------------
+// Variables que almacenan el los Precios
+var amountCheckInProvince;
+var amountCheckOutProvince;
+var amountTruckType;
+var amountServiceType;
+var totalPrice;
 
-// Precios Tipo de Camión
+// Variable que almacena el OBJETO Completo para resumen
+var totalData = {};
+
+// Variables que almacenan el Precio de cada Provincia
+var amountProvinceMI = 4000;
+var amountProvinceSL = 3900;
+var amountProvinceSJ = 3800;
+var amountProvinceER = 3700;
+var amountProvinceSC = 3600;
+var amountProvinceRN = 3500;
+var amountProvinceCH = 3400;
+var amountProvinceCB = 3300;
+var amountProvinceME = 3200;
+var amountProvinceLR = 3100;
+var amountProvinceCA = 3000;
+var amountProvinceLP = 2900;
+var amountProvinceSE = 2800;
+var amountProvinceCO = 2700;
+var amountProvinceSF = 2600;
+var amountProvinceTU = 2500;
+var amountProvinceNE = 2400;
+var amountProvinceSA = 2300;
+var amountProvinceCC = 2200;
+var amountProvinceFO = 2100;
+var amountProvinceJU = 2000;
+var amountProvinceCF = 0;
+var amountProvinceBS = 500;
+var amountProvinceTF = 5000;
+
+// Variables que almacenan el Precio de cada Tipo de Camión
 var amountTruckSM = 100;
 var amountTruckMD = 200;
 var amountTruckXL = 300;
 
-// Precios Tipo de Servicio
-var amountServiceEmpaque = 50;
-var amountServiceDesempaque = 50;
-var amountServiceAmbos = 100;
+// Variables que almacenan el Precio de cada Tipo de Servicio
+var amountServiceNull = 0;
+var amountServicePacking = 500;
+var amountServiceUnpacking = 500;
+var amountServiceDuo = 1000;
 
-// Precio Total
-var totalPrice;
-
-// Objeto Completo
-var totalData = {};
-
-// Steps
-var showing = [1, 0, 0, 0, 0, 0, 0];
-var steps = ['step0', 'step1', 'step2', 'step3', 'step4', 'step5', 'step6'];
-
-function next() {
-
-    var qElems = [];
-
-    for (var i = 0; i < steps.length; i++) {
-        qElems.push(document.getElementById(steps[i]));
-    }
-
-    for (var i = 0; i < showing.length; i++) {
-        if (showing[i] == 1) {
-            qElems[i].style.display = 'none';
-            showing[i] = 0;
-            if (i == showing.length - 1) {
-                qElems[0].style.display = 'block';
-                showing[0] = 1;
-            } else {
-                qElems[i + 1].style.display = 'block';
-                showing[i + 1] = 1;
-            }
-            break;
-        }
-    }
-
-    // Step0
-    totalData.FirstName = document.getElementById("inputFirstName").value;
-    totalData.LastName = document.getElementById("inputLastName").value;
-    totalData.Mail = document.getElementById("inputMail").value;
-
-    // console.log(totalData);
-
-    let elementsUserName = document.querySelectorAll(".userName");
-    console.log(elementsUserName);
-    elementsUserName.forEach(x => {
-        x.innerHTML = totalData.FirstName;
+// FUNCIONES -------------
+// Funciones que se conectan con la API de provincias y municipios
+function searchProvince() {
+    var url = `https://apis.datos.gob.ar/georef/api/provincias`;
+    $.ajax({
+        method: "GET",
+        url: url,
+    }).done(function (data) {
+        // console.log(data);
+        renderProvince(data.provincias);
+    }).fail(function (error) {
+        console.log(error)
     });
-
-    // var list = document.querySelectorAll('.userName');
-    // for (var n = 0; n < list.length; ++n) {
-    //     list[n].innerHTML = totalData.FirstName;
-    //     console.log(list[n]);
-    // }
-
-    // Step1
-    totalData.CheckInStreet = document.getElementById("inputCheckInStreet").value;
-    totalData.CheckInNumber = document.getElementById("inputCheckInNumber").value;
-    totalData.CheckInFloor = document.getElementById("inputCheckInFloor").value;
-    totalData.CheckInPostalCode = document.getElementById("inputCheckInPostalCode").value;
-    totalData.CheckInLocation = document.getElementById("selectCheckInLocation").value;
-    totalData.CheckInProvince = document.getElementById("selectCheckInProvince").value;
-
-    // console.log(totalData.CheckInProvince);
-
-    let elementsCheckInAddress = document.querySelectorAll(".checkInAddress");
-    // console.log(elementsCheckInAddress);
-    elementsCheckInAddress.forEach(x => {
-        x.innerHTML = totalData.CheckInStreet.concat(totalData.CheckInNumber,totalData.CheckInFloor);
-    });
-
-    if(totalData.CheckInProvince == 1) {
-        totalPrice = amountProvinceCABA;
-    } else if(totalData.CheckInProvince == 2) {
-        totalPrice = amountProvinceCABA;
-    } else if(totalData.CheckInProvince == 3) {
-        totalPrice = amountProvinceSF;
-    }
-
-    // console.log(totalPrice);
-
-    // Step2
-    totalData.CheckInDate = document.getElementById("inputCheckInDate").value;
-    totalData.CheckInTime = document.getElementById("inputCheckInTime").value;
-
-    let elementsCheckInDate = document.querySelectorAll(".checkInDate");
-    // console.log(elementsCheckInDate);
-    elementsCheckInDate.forEach(x => {
-        x.innerHTML = totalData.CheckInDate.concat(totalData.CheckInTime);
-    });
-
-    // console.log(totalData);
-
-    // Step3
-    totalData.CheckOutStreet = document.getElementById("inputCheckOutStreet").value;
-    totalData.CheckOutNumber = document.getElementById("inputCheckOutNumber").value;
-    totalData.CheckOutFloor = document.getElementById("inputCheckOutFloor").value;
-    totalData.CheckOutPostalCode = document.getElementById("inputCheckOutPostalCode").value;
-    totalData.CheckOutLocation = document.getElementById("selectCheckOutLocation").value;
-    totalData.CheckOutProvince = document.getElementById("selectCheckOutProvince").value;
-
-    // console.log(totalData.CheckOutProvince);
-
-    let elementsCheckOutAddress = document.querySelectorAll(".checkOutAddress");
-    // console.log(elementsCheckOutAddress);
-    elementsCheckOutAddress.forEach(x => {
-        x.innerHTML = totalData.CheckOutStreet.concat(totalData.CheckOutNumber,totalData.CheckOutFloor);
-    });
-
-    if(totalData.CheckOutProvince == 1) {
-        totalPrice = totalPrice + amountProvinceCABA;
-    } else if(totalData.CheckOutProvince == 2) {
-        totalPrice = totalPrice + amountProvinceCABA;
-    } else if(totalData.CheckOutProvince == 3) {
-        totalPrice = totalPrice + amountProvinceSF;
-    }
-
-    // console.log(totalPrice);
-
-    // Step4
-    totalData.CheckOutDate = document.getElementById("inputCheckOutDate").value;
-    totalData.CheckOutTime = document.getElementById("inputCheckOutTime").value;
-
-    let elementsCheckOutDate = document.querySelectorAll(".checkOutDate");
-    // console.log(elementsCheckOutDate);
-    elementsCheckOutDate.forEach(x => {
-        x.innerHTML = totalData.CheckOutDate.concat(totalData.CheckOutTime);
-    });
-
-    // console.log(totalData);
-
-    // Step5
-    totalData.TruckType = 1;
-
-    let elementsTruckType = document.querySelectorAll(".truckType");
-    // console.log(elementsTruckType);
-    elementsTruckType.forEach(x => {
-        x.innerHTML = totalData.TruckType;
-    });
-
-    if(totalData.TruckType == 1) {
-        totalPrice = totalPrice + amountTruckSM;
-    } else if(totalData.TruckType == 2) {
-        totalPrice = totalPrice + amountTruckMD;
-    } else if(totalData.TruckType == 3) {
-        totalPrice = totalPrice + amountTruckXL;
-    }
-
-    // console.log(totalPrice);
-
-    // Step6
-    totalData.ServiceType = 1;
-
-    let elementsServiceType = document.querySelectorAll(".serviceType");
-    // console.log(elementsServiceType);
-    elementsServiceType.forEach(x => {
-        x.innerHTML = totalData.ServiceType;
-    });
-
-    if(totalData.ServiceType == 1) {
-        totalPrice = totalPrice + amountServiceEmpaque;
-    } else if(totalData.ServiceType == 2) {
-        totalPrice = totalPrice + amountServiceDesempaque;
-    } else if(totalData.ServiceType == 3) {
-        totalPrice = totalPrice + amountServiceAmbos;
-    } else if(totalData.ServiceType == 4) {
-        totalPrice;
-    } 
-
-    // console.log(totalPrice);
-
-    // Monto Total
-    let elementsPrice = document.getElementById("totalPrice");
-    elementsPrice.innerHTML = totalPrice;
-
 }
+
+function getOptionProvince(province) {
+    return `
+        <option value="${province.id}">${province.nombre}</option>
+    `;
+}
+
+function renderProvince(provinces) {
+    provinces.forEach(province => {
+        $('#selectCheckInProvince').append(getOptionProvince(province));
+        $('#selectCheckOutProvince').append(getOptionProvince(province));
+    });
+}
+
+function searchTown(id) {
+    var url = `https://apis.datos.gob.ar/georef/api/municipios?provincia=${id}&campos=id,nombre&max=100`;
+    $.ajax({
+        method: "GET",
+        url: url,
+    }).done(function (data) {
+        // console.log(data.municipios);
+        renderTown(data.municipios);
+    }).fail(function (error) {
+        console.log(error);
+    });
+}
+
+function getOptionTown(town) {
+    return `
+        <option value="${town.id}">${town.nombre}</option>
+    `;
+}
+
+function renderTown(towns) {
+    towns.forEach(town => {
+        $('#selectCheckInTown').append(getOptionTown(town));
+        $('#selectCheckOutTown').append(getOptionTown(town));
+    });
+}
+
+function saveCheckInProvince() {
+    var saveCheckInProvince = $("#selectCheckInProvince").val();
+    searchTown(saveCheckInProvince);
+}
+
+function saveCheckOutProvince() {
+    var saveCheckOutProvince = $("#selectCheckOutProvince").val();
+    searchTown(saveCheckOutProvince);
+}
+
+// Función que devuelve el Precio de cada Provincia
+function AmountCheckInProvince(totalDataProvince) {
+    var totalDataProvince = totalData.CheckInProvince;
+    if(totalDataProvince == "54") {
+        amountCheckInProvince = amountProvinceMI;
+    } else if(totalDataProvince == "74") {
+        amountCheckInProvince = amountProvinceSL;
+    } else if(totalDataProvince == "70") {
+        amountCheckInProvince = amountProvinceSJ;
+    } else if(totalDataProvince == "30") {
+        amountCheckInProvince = amountProvinceER;
+    } else if(totalDataProvince == "78") {
+        amountCheckInProvince = amountProvinceSC;
+    } else if(totalDataProvince == "62") {
+        amountCheckInProvince = amountProvinceRN;
+    } else if(totalDataProvince == "26") {
+        amountCheckInProvince = amountProvinceCH;
+    } else if(totalDataProvince == "14") {
+        amountCheckInProvince = amountProvinceCB;
+    } else if(totalDataProvince == "50") {
+        amountCheckInProvince = amountProvinceME;
+    } else if(totalDataProvince == "46") {
+        amountCheckInProvince = amountProvinceLR;
+    } else if(totalDataProvince == "10") {
+        amountCheckInProvince = amountProvinceCA;
+    } else if(totalDataProvince == "42") {
+        amountCheckInProvince = amountProvinceLP;
+    } else if(totalDataProvince == "86") {
+        amountCheckInProvince = amountProvinceSE;
+    } else if(totalDataProvince == "18") {
+        amountCheckInProvince = amountProvinceCO;
+    } else if(totalDataProvince == "82") {
+        amountCheckInProvince = amountProvinceSF;
+    } else if(totalDataProvince == "90") {
+        amountCheckInProvince = amountProvinceTU;
+    } else if(totalDataProvince == "58") {
+        amountCheckInProvince = amountProvinceNE;
+    } else if(totalDataProvince == "66") {
+        amountCheckInProvince = amountProvinceSA;
+    } else if(totalDataProvince == "22") {
+        amountCheckInProvince = amountProvinceCC;
+    } else if(totalDataProvince == "34") {
+        amountCheckInProvince = amountProvinceFO;
+    } else if(totalDataProvince == "38") {
+        amountCheckInProvince = amountProvinceJU;
+    } else if(totalDataProvince == "02") {
+        amountCheckInProvince = amountProvinceCF;
+    } else if(totalDataProvince == "06") {
+        amountCheckInProvince = amountProvinceBS;
+    } else if(totalDataProvince == "94") {
+        amountCheckInProvince = amountProvinceTF;
+    } else {
+        console.log('La provincia es inválido. Intenta nuevamente.');
+    }
+    console.log(amountCheckInProvince);
+}
+
+function AmountCheckOutProvince(totalDataProvince) {
+    var totalDataProvince = totalData.CheckOutProvince;
+    if(totalDataProvince == "54") {
+        amountCheckOutProvince = amountProvinceMI;
+    } else if(totalDataProvince == "74") {
+        amountCheckOutProvince = amountProvinceSL;
+    } else if(totalDataProvince == "70") {
+        amountCheckOutProvince = amountProvinceSJ;
+    } else if(totalDataProvince == "30") {
+        amountCheckOutProvince = amountProvinceER;
+    } else if(totalDataProvince == "78") {
+        amountCheckOutProvince = amountProvinceSC;
+    } else if(totalDataProvince == "62") {
+        amountCheckOutProvince = amountProvinceRN;
+    } else if(totalDataProvince == "26") {
+        amountCheckOutProvince = amountProvinceCH;
+    } else if(totalDataProvince == "14") {
+        amountCheckOutProvince = amountProvinceCB;
+    } else if(totalDataProvince == "50") {
+        amountCheckOutProvince = amountProvinceME;
+    } else if(totalDataProvince == "46") {
+        amountCheckOutProvince = amountProvinceLR;
+    } else if(totalDataProvince == "10") {
+        amountCheckOutProvince = amountProvinceCA;
+    } else if(totalDataProvince == "42") {
+        amountCheckOutProvince = amountProvinceLP;
+    } else if(totalDataProvince == "86") {
+        amountCheckOutProvince = amountProvinceSE;
+    } else if(totalDataProvince == "18") {
+        amountCheckOutProvince = amountProvinceCO;
+    } else if(totalDataProvince == "82") {
+        amountCheckOutProvince = amountProvinceSF;
+    } else if(totalDataProvince == "90") {
+        amountCheckOutProvince = amountProvinceTU;
+    } else if(totalDataProvince == "58") {
+        amountCheckOutProvince = amountProvinceNE;
+    } else if(totalDataProvince == "66") {
+        amountCheckOutProvince = amountProvinceSA;
+    } else if(totalDataProvince == "22") {
+        amountCheckOutProvince = amountProvinceCC;
+    } else if(totalDataProvince == "34") {
+        amountCheckOutProvince = amountProvinceFO;
+    } else if(totalDataProvince == "38") {
+        amountCheckOutProvince = amountProvinceJU;
+    } else if(totalDataProvince == "02") {
+        amountCheckOutProvince = amountProvinceCF;
+    } else if(totalDataProvince == "06") {
+        amountCheckOutProvince = amountProvinceBS;
+    } else if(totalDataProvince == "94") {
+        amountCheckOutProvince = amountProvinceTF;
+    } else {
+        console.log('La provincia es inválido. Intenta nuevamente.');
+    }
+    console.log(amountCheckOutProvince);
+}
+
+// Función que devuelve el Precio de cada Tipo de camión
+function AmountTruckType(totalDataTruckType) {
+    var totalDataTruckType = totalData.TruckType;
+    if(totalDataTruckType == "Chico") {
+        amountTruckType = amountTruckSM;
+    } else if(totalDataTruckType == "Grande") {
+        amountTruckType = amountTruckMD;
+    } else if(totalDataTruckType == "Extra Grande") {
+        amountTruckType = amountTruckXL;
+    } else {
+        console.log('El tipo de camión es inválido. Intenta nuevamente.');
+    }
+    console.log(amountTruckType);
+}
+
+// Función que devuelve el Precio de cada Tipo de serivico
+function AmountServiceType(totalDataServiceType) {
+    var totalDataServiceType = totalData.ServiceType;
+    if(totalDataServiceType == "Ninguno") {
+        amountServiceType = amountServiceNull;
+    } else if(totalDataServiceType == "Empaque") {
+        amountServiceType = amountServicePacking;
+    } else if(totalDataServiceType == "Desempaque") {
+        amountServiceType = amountServiceUnpacking;
+    } else if(totalDataServiceType == "Ambos") {
+        amountServiceType = amountServiceDuo;
+    } else {
+        console.log('El tipo de servicio es inválido. Intenta nuevamente.');
+    }
+    console.log(amountServiceType);
+}
+
+// Ejecución en DOM -------------
+$(document).ready(() => {
+
+    $('.userName').addClass('d-none');
+    $('#step1Label .d-flex .d-flex').addClass('btn-primary');
+    $("#step2").hide();
+    $("#step3").hide();
+    $("#step4").hide();
+    $("#step5").hide();
+    $("#step6").hide();
+    $("#step7").hide();
+    $("#step8").hide();
+
+    // STEP 1 - Datos del usuario
+    $("form[name='step1']").validate({
+        rules: {
+            inputFirstName: {
+                required: true
+            },
+            inputLastName: {
+                required: true
+            },
+            inputMail: {
+                required: true,
+                email: true
+            },
+            inputPhone: {
+                required: true,
+                digits: true,
+                minlength: 8,
+                maxlength: 10
+            }
+        },
+        messages: {
+            inputFirstName: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputLastName: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputMail: {
+                required: 'El campo es <strong>requerido</strong>.',
+                email: 'El correo electrónico es inválido. Intenta nuevamente.'
+            },
+            inputMail: {
+                required: 'El campo es <strong>requerido</strong>.',
+                digits: "El teléfono es inválido. Intenta nuevamente.",
+                minlength: "El teléfono debe tener mínimo 8 dígitos",
+                maxlength: "El teléfono debe tener mínimo 10 dígitos",
+            }
+        },
+        submitHandler: function(form) {
+            totalData.FirstName = $('input[name="inputFirstName"]').val();
+            totalData.LastName = $('input[name="inputLastName"]').val();
+            totalData.Mail = $('input[name="inputMail"]').val();
+            totalData.Phone = $('input[name="inputPhone"]').val();
+
+            $("#step1").slideUp("slow", function() {
+                $("#step2").slideDown("slow", function(){
+                    $('#step1Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step1Label .d-flex .d-flex').addClass('btn-light');
+                    $('.userName').addClass('d-flex');
+                    $('.userName').html($('input[name="inputFirstName"]').val());
+                    $('#step2Label .d-flex .d-flex').addClass('btn-primary');
+                })
+            });
+            console.log(totalData);
+        }
+    });
+
+    // OJO - no se actualizan las localidades
+    searchProvince();
+    $("#selectCheckInProvince").change(saveCheckInProvince);
+    saveCheckInProvince();
+
+    // STEP 2 - Dirección de origen
+    $("form[name='step2']").validate({
+        rules: {
+            selectCheckInProvince: {
+                required: true
+            },
+            selectCheckInTown: {
+                required: false
+            },
+            inputCheckInStreet: {
+                required: true
+            },
+            inputCheckInNumber: {
+                required: true
+            },
+            inputCheckInFloor: {
+                required: false
+            },
+            inputCheckInPostalCode: {
+                required: true
+            }
+        },
+        messages: {
+            selectCheckInProvince: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckInStreet: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckInNumber: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckInPostalCode: {
+                required: 'El campo es <strong>requerido</strong>.'
+            }
+        },
+        submitHandler: function(form) {
+            totalData.CheckInProvince = $('select[name="selectCheckInProvince"]').val();
+            totalData.CheckInTown = $('select[name="selectCheckInTown"]').val();
+            totalData.CheckInStreet = $('input[name="inputCheckInStreet"]').val();
+            totalData.CheckInNumber = $('input[name="inputCheckInNumber"]').val();
+            totalData.CheckInFloor = $('input[name="inputCheckInFloor"]').val();
+            totalData.CheckInPostalCode = $('input[name="inputCheckInPostalCode"]').val();
+            $("#step2").slideUp("slow", function() {
+                $("#step3").slideDown("slow", function(){
+                    $('#step2Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step2Label .d-flex .d-flex').addClass('btn-light');
+                    $('.checkInAddress').html($('input[name="inputCheckInStreet"]').val() + ' ' + $('input[name="inputCheckInNumber"]').val() + ' ' + $('input[name="inputCheckInFloor"]').val());
+                    $('#step3Label .d-flex .d-flex').addClass('btn-primary');
+                })
+            });
+            console.log(totalData);
+            let idCheckInProvince = totalData.CheckInProvince;
+            amountCheckInProvince = AmountCheckInProvince(idCheckInProvince);
+        }
+    });
+
+    // STEP 3 - Fecha de origen
+    $("form[name='step3']").validate({
+        rules: {
+            inputCheckInDate: {
+                required: false
+            },
+            inputCheckInTime: {
+                required: true
+            }
+        },
+        messages: {
+            inputCheckInDate: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckInTime: {
+                required: 'El campo es <strong>requerido</strong>.'
+            }
+        },
+        submitHandler: function(form) {
+            totalData.CheckInDate = $('input[name="inputCheckInDate"]').val();
+            totalData.CheckInTime = $('input[name="inputCheckInTime"]').val();
+            $("#step3").slideUp("slow", function() {
+                $("#step4").slideDown("slow", function(){
+                    $('#step3Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step3Label .d-flex .d-flex').addClass('btn-light');
+                    $('.checkInDate').html($('input[name="inputCheckInDate"]').val() + ' ' + $('input[name="inputCheckInTime"]').val());
+                    $('#step4Label .d-flex .d-flex').addClass('btn-primary');
+                })
+            });
+            console.log(totalData);
+        }
+    });
+
+    // OJO - no se actualizan las localidades
+    searchProvince();
+    $("#selectCheckOutProvince").change(saveCheckOutProvince);
+    saveCheckOutProvince();
+
+    // STEP 4 - Dirección de destino
+    $("form[name='step4']").validate({
+        rules: {
+            selectCheckOutProvince: {
+                required: true
+            },
+            selectCheckOutTown: {
+                required: false
+            },
+            inputCheckOutStreet: {
+                required: true
+            },
+            inputCheckOutNumber: {
+                required: true
+            },
+            inputCheckOutFloor: {
+                required: false
+            },
+            inputCheckOutPostalCode: {
+                required: true
+            }
+        },
+        messages: {
+            selectCheckOutProvince: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckOutStreet: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckOutNumber: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckOutPostalCode: {
+                required: 'El campo es <strong>requerido</strong>.'
+            }
+        },
+        submitHandler: function(form) {
+            totalData.CheckOutProvince = $('select[name="selectCheckOutProvince"]').val();
+            totalData.CheckOutTown = $('select[name="selectCheckOutTown"]').val();
+            totalData.CheckOutStreet = $('input[name="inputCheckOutStreet"]').val();
+            totalData.CheckOutNumber = $('input[name="inputCheckOutNumber"]').val();
+            totalData.CheckOutFloor = $('input[name="inputCheckOutFloor"]').val();
+            totalData.CheckOutPostalCode = $('input[name="inputCheckOutPostalCode"]').val();
+            $("#step4").slideUp("slow", function() {
+                $("#step5").slideDown("slow", function(){
+                    $('#step4Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step4Label .d-flex .d-flex').addClass('btn-light');
+                    $('.checkOutAddress').html($('input[name="inputCheckOutStreet"]').val() + ' ' + $('input[name="inputCheckOutNumber"]').val() + ' ' + $('input[name="inputCheckOutFloor"]').val());
+                    $('#step5Label .d-flex .d-flex').addClass('btn-primary');
+                })
+            });
+            console.log(totalData);
+            let idCheckOutProvince = totalData.CheckOutProvince;
+            AmountCheckOutProvince(idCheckOutProvince);
+        }
+    });
+
+    // STEP 5 - Fecha de destino
+    $("form[name='step5']").validate({
+        rules: {
+            inputCheckOutDate: {
+                required: false
+            },
+            inputCheckOutTime: {
+                required: true
+            }
+        },
+        messages: {
+            inputCheckOutDate: {
+                required: 'El campo es <strong>requerido</strong>.'
+            },
+            inputCheckOutTime: {
+                required: 'El campo es <strong>requerido</strong>.'
+            }
+        },
+        submitHandler: function(form) {
+            totalData.CheckOutDate = $('input[name="inputCheckOutDate"]').val();
+            totalData.CheckOutTime = $('input[name="inputCheckOutTime"]').val();
+            $("#step5").slideUp("slow", function() {
+                $("#step6").slideDown("slow", function(){
+                    $('#step5Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step5Label .d-flex .d-flex').addClass('btn-light');
+                    $('.checkOutDate').html($('input[name="inputCheckOutDate"]').val() + ' ' + $('input[name="inputCheckOutTime"]').val());
+                    $('#step6Label .d-flex .d-flex').addClass('btn-primary');
+                })
+            });
+            console.log(totalData);
+        }
+    });
+
+    // STEP 6 - Tipo de camión
+    $("form[name='step6']").validate({
+        rules: {
+            selectTruckSM: {
+                required: false
+            },
+            selectTruckMD: {
+                required: false
+            },
+            selectTruckXL: {
+                required: false
+            }
+        },
+        submitHandler: function(form) {
+            totalData.TruckType = $('input[name="selectTruckSM"]').val();
+            $("#step6").slideUp("slow", function() {
+                $("#step7").slideDown("slow", function(){
+                    $('#step6Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step6Label .d-flex .d-flex').addClass('btn-light');
+                    $('.truckType').html($('input[name="selectTruckSM"]').val());
+                    $('#step7Label .d-flex .d-flex').addClass('btn-primary');
+                })
+            });
+            console.log(totalData);
+            var amountTruckType = totalData.TruckType;
+            AmountTruckType(amountTruckType);
+        }
+    });
+
+    // STEP 7 - Tipo de servicio
+    $("form[name='step7']").validate({
+        rules: {
+            selectServiceNull: {
+                required: false
+            },
+            selectervicePacking: {
+                required: false
+            },
+            selectServiceUnpacking: {
+                required: false
+            },
+            selectServiceDuo: {
+                required: false
+            }
+        },
+        submitHandler: function(form) {
+            totalData.ServiceType = $('input[name="selectServiceType"]').val();
+            $("#step7").slideUp("slow", function() {
+                $("#step8").slideDown("slow", function(){
+                    $('#step7Label .d-flex .d-flex').removeClass('btn-primary');
+                    $('#step7Label .d-flex .d-flex').addClass('btn-light');
+                    $('.serviceType').html($('input[name="selectServiceType"]').val());
+                    $('#step8Label .d-flex .d-flex').addClass('btn-success');
+                })
+            });
+            console.log(totalData);
+            var amountServiceType = totalData.ServiceType;
+            AmountServiceType(amountServiceType);
+        }
+    });
+
+    // STEP 8 - Presupuesto listo
+    // $('.progress-number .text-right .text-primary').html("100%");
+    totalPrice = amountCheckInProvince + amountCheckOutProvince + amountTruckType + amountServiceType;
+    $('#totalPrice').html(totalPrice);
+
+});
