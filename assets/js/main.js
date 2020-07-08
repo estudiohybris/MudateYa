@@ -581,7 +581,7 @@ $(document).ready(() => {
     var elementsTotalPrice = document.querySelectorAll(".totalPrice");
     console.log(elementsTotalPrice);
     elementsTotalPrice.forEach(x => {
-        x.innerHTML = totalData.amountCheckInProvince + totalData.amountCheckOutProvince + totalData.amountServiceType + totalData.amountTruckType;
+        x.innerHTML = parseInt(totalData.amountCheckInProvince) + parseInt(totalData.amountCheckOutProvince) + parseInt(totalData.amountServiceType) + parseInt(totalData.amountTruckType);
     });
 
 });
