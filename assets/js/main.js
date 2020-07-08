@@ -7,7 +7,6 @@ var amountCheckInProvince;
 var amountCheckOutProvince;
 var amountTruckType;
 var amountServiceType;
-var totalPrice;
 
 // Variable que almacena el OBJETO Completo para resumen
 var totalData = {};
@@ -117,145 +116,145 @@ function saveCheckOutProvince() {
 function AmountCheckInProvince(totalDataProvince) {
     var totalDataProvince = totalData.CheckInProvince;
     if(totalDataProvince == "54") {
-        amountCheckInProvince = amountProvinceMI;
+        totalData.amountCheckInProvince = amountProvinceMI;
     } else if(totalDataProvince == "74") {
-        amountCheckInProvince = amountProvinceSL;
+        totalData.amountCheckInProvince = amountProvinceSL;
     } else if(totalDataProvince == "70") {
-        amountCheckInProvince = amountProvinceSJ;
+        totalData.amountCheckInProvince = amountProvinceSJ;
     } else if(totalDataProvince == "30") {
-        amountCheckInProvince = amountProvinceER;
+        totalData.amountCheckInProvince = amountProvinceER;
     } else if(totalDataProvince == "78") {
-        amountCheckInProvince = amountProvinceSC;
+        totalData.amountCheckInProvince = amountProvinceSC;
     } else if(totalDataProvince == "62") {
-        amountCheckInProvince = amountProvinceRN;
+        totalData.amountCheckInProvince = amountProvinceRN;
     } else if(totalDataProvince == "26") {
-        amountCheckInProvince = amountProvinceCH;
+        totalData.amountCheckInProvince = amountProvinceCH;
     } else if(totalDataProvince == "14") {
-        amountCheckInProvince = amountProvinceCB;
+        totalData.amountCheckInProvince = amountProvinceCB;
     } else if(totalDataProvince == "50") {
-        amountCheckInProvince = amountProvinceME;
+        totalData.amountCheckInProvince = amountProvinceME;
     } else if(totalDataProvince == "46") {
-        amountCheckInProvince = amountProvinceLR;
+        totalData.amountCheckInProvince = amountProvinceLR;
     } else if(totalDataProvince == "10") {
-        amountCheckInProvince = amountProvinceCA;
+        totalData.amountCheckInProvince = amountProvinceCA;
     } else if(totalDataProvince == "42") {
-        amountCheckInProvince = amountProvinceLP;
+        totalData.amountCheckInProvince = amountProvinceLP;
     } else if(totalDataProvince == "86") {
-        amountCheckInProvince = amountProvinceSE;
+        totalData.amountCheckInProvince = amountProvinceSE;
     } else if(totalDataProvince == "18") {
-        amountCheckInProvince = amountProvinceCO;
+        totalData.amountCheckInProvince = amountProvinceCO;
     } else if(totalDataProvince == "82") {
-        amountCheckInProvince = amountProvinceSF;
+        totalData.amountCheckInProvince = amountProvinceSF;
     } else if(totalDataProvince == "90") {
-        amountCheckInProvince = amountProvinceTU;
+        totalData.amountCheckInProvince = amountProvinceTU;
     } else if(totalDataProvince == "58") {
-        amountCheckInProvince = amountProvinceNE;
+        totalData.amountCheckInProvince = amountProvinceNE;
     } else if(totalDataProvince == "66") {
-        amountCheckInProvince = amountProvinceSA;
+        totalData.amountCheckInProvince = amountProvinceSA;
     } else if(totalDataProvince == "22") {
-        amountCheckInProvince = amountProvinceCC;
+        totalData.amountCheckInProvince = amountProvinceCC;
     } else if(totalDataProvince == "34") {
-        amountCheckInProvince = amountProvinceFO;
+        totalData.amountCheckInProvince = amountProvinceFO;
     } else if(totalDataProvince == "38") {
-        amountCheckInProvince = amountProvinceJU;
+        totalData.amountCheckInProvince = amountProvinceJU;
     } else if(totalDataProvince == "02") {
-        amountCheckInProvince = amountProvinceCF;
+        totalData.amountCheckInProvince = amountProvinceCF;
     } else if(totalDataProvince == "06") {
-        amountCheckInProvince = amountProvinceBS;
+        totalData.amountCheckInProvince = amountProvinceBS;
     } else if(totalDataProvince == "94") {
-        amountCheckInProvince = amountProvinceTF;
+        totalData.amountCheckInProvince = amountProvinceTF;
     } else {
         console.log('La provincia es inválido. Intenta nuevamente.');
     }
-    console.log(amountCheckInProvince);
+    console.log(totalData.amountCheckInProvince);
 }
 
 function AmountCheckOutProvince(totalDataProvince) {
     var totalDataProvince = totalData.CheckOutProvince;
     if(totalDataProvince == "54") {
-        amountCheckOutProvince = amountProvinceMI;
+        totalData.amountCheckOutProvince = amountProvinceMI;
     } else if(totalDataProvince == "74") {
-        amountCheckOutProvince = amountProvinceSL;
+        totalData.amountCheckOutProvince = amountProvinceSL;
     } else if(totalDataProvince == "70") {
-        amountCheckOutProvince = amountProvinceSJ;
+        totalData.amountCheckOutProvince = amountProvinceSJ;
     } else if(totalDataProvince == "30") {
-        amountCheckOutProvince = amountProvinceER;
+        totalData.amountCheckOutProvince = amountProvinceER;
     } else if(totalDataProvince == "78") {
-        amountCheckOutProvince = amountProvinceSC;
+        totalData.amountCheckOutProvince = amountProvinceSC;
     } else if(totalDataProvince == "62") {
-        amountCheckOutProvince = amountProvinceRN;
+        totalData.amountCheckOutProvince = amountProvinceRN;
     } else if(totalDataProvince == "26") {
-        amountCheckOutProvince = amountProvinceCH;
+        totalData.amountCheckOutProvince = amountProvinceCH;
     } else if(totalDataProvince == "14") {
-        amountCheckOutProvince = amountProvinceCB;
+        totalData.amountCheckOutProvince = amountProvinceCB;
     } else if(totalDataProvince == "50") {
-        amountCheckOutProvince = amountProvinceME;
+        totalData.amountCheckOutProvince = amountProvinceME;
     } else if(totalDataProvince == "46") {
-        amountCheckOutProvince = amountProvinceLR;
+        totalData.amountCheckOutProvince = amountProvinceLR;
     } else if(totalDataProvince == "10") {
-        amountCheckOutProvince = amountProvinceCA;
+        totalData.amountCheckOutProvince = amountProvinceCA;
     } else if(totalDataProvince == "42") {
-        amountCheckOutProvince = amountProvinceLP;
+        totalData.amountCheckOutProvince = amountProvinceLP;
     } else if(totalDataProvince == "86") {
-        amountCheckOutProvince = amountProvinceSE;
+        totalData.amountCheckOutProvince = amountProvinceSE;
     } else if(totalDataProvince == "18") {
-        amountCheckOutProvince = amountProvinceCO;
+        totalData.amountCheckOutProvince = amountProvinceCO;
     } else if(totalDataProvince == "82") {
-        amountCheckOutProvince = amountProvinceSF;
+        totalData.amountCheckOutProvince = amountProvinceSF;
     } else if(totalDataProvince == "90") {
-        amountCheckOutProvince = amountProvinceTU;
+        totalData.amountCheckOutProvince = amountProvinceTU;
     } else if(totalDataProvince == "58") {
-        amountCheckOutProvince = amountProvinceNE;
+        totalData.amountCheckOutProvince = amountProvinceNE;
     } else if(totalDataProvince == "66") {
-        amountCheckOutProvince = amountProvinceSA;
+        totalData.amountCheckOutProvince = amountProvinceSA;
     } else if(totalDataProvince == "22") {
-        amountCheckOutProvince = amountProvinceCC;
+        totalData.amountCheckOutProvince = amountProvinceCC;
     } else if(totalDataProvince == "34") {
-        amountCheckOutProvince = amountProvinceFO;
+        totalData.amountCheckOutProvince = amountProvinceFO;
     } else if(totalDataProvince == "38") {
-        amountCheckOutProvince = amountProvinceJU;
+        totalData.amountCheckOutProvince = amountProvinceJU;
     } else if(totalDataProvince == "02") {
-        amountCheckOutProvince = amountProvinceCF;
+        totalData.amountCheckOutProvince = amountProvinceCF;
     } else if(totalDataProvince == "06") {
-        amountCheckOutProvince = amountProvinceBS;
+        totalData.amountCheckOutProvince = amountProvinceBS;
     } else if(totalDataProvince == "94") {
-        amountCheckOutProvince = amountProvinceTF;
+        totalData.amountCheckOutProvince = amountProvinceTF;
     } else {
         console.log('La provincia es inválido. Intenta nuevamente.');
     }
-    console.log(amountCheckOutProvince);
+    console.log(totalData.amountCheckOutProvince);
 }
 
 // Función que devuelve el Precio de cada Tipo de camión
 function AmountTruckType(totalDataTruckType) {
     var totalDataTruckType = totalData.TruckType;
     if(totalDataTruckType == "Chico") {
-        amountTruckType = amountTruckSM;
+        totalData.amountTruckType = amountTruckSM;
     } else if(totalDataTruckType == "Grande") {
-        amountTruckType = amountTruckMD;
+        totalData.amountTruckType = amountTruckMD;
     } else if(totalDataTruckType == "Extra Grande") {
-        amountTruckType = amountTruckXL;
+        totalData.amountTruckType = amountTruckXL;
     } else {
         console.log('El tipo de camión es inválido. Intenta nuevamente.');
     }
-    console.log(amountTruckType);
+    console.log(totalData.amountTruckType);
 }
 
 // Función que devuelve el Precio de cada Tipo de serivico
 function AmountServiceType(totalDataServiceType) {
     var totalDataServiceType = totalData.ServiceType;
     if(totalDataServiceType == "Ninguno") {
-        amountServiceType = amountServiceNull;
+        totalData.amountServiceType = amountServiceNull;
     } else if(totalDataServiceType == "Empaque") {
-        amountServiceType = amountServicePacking;
+        totalData.amountServiceType = amountServicePacking;
     } else if(totalDataServiceType == "Desempaque") {
-        amountServiceType = amountServiceUnpacking;
+        totalData.amountServiceType = amountServiceUnpacking;
     } else if(totalDataServiceType == "Ambos") {
-        amountServiceType = amountServiceDuo;
+        totalData.amountServiceType = amountServiceDuo;
     } else {
         console.log('El tipo de servicio es inválido. Intenta nuevamente.');
     }
-    console.log(amountServiceType);
+    console.log(totalData.amountServiceType);
 }
 
 // Ejecución en DOM -------------
@@ -532,12 +531,12 @@ $(document).ready(() => {
             }
         },
         submitHandler: function(form) {
-            totalData.TruckType = $('input[name="selectTruckSM"]').val();
+            totalData.TruckType = $('input:radio[name="selectTruckType"]:checked').val();
             $("#step6").slideUp("slow", function() {
                 $("#step7").slideDown("slow", function(){
                     $('#step6Label .d-flex .d-flex').removeClass('btn-primary');
                     $('#step6Label .d-flex .d-flex').addClass('btn-light');
-                    $('.truckType').html($('input[name="selectTruckSM"]').val());
+                    $('.truckType').html(totalData.TruckType);
                     $('#step7Label .d-flex .d-flex').addClass('btn-primary');
                 })
             });
@@ -564,12 +563,12 @@ $(document).ready(() => {
             }
         },
         submitHandler: function(form) {
-            totalData.ServiceType = $('input[name="selectServiceType"]').val();
+            totalData.ServiceType = $('input:radio[name="selectServiceType"]:checked').val();
             $("#step7").slideUp("slow", function() {
                 $("#step8").slideDown("slow", function(){
                     $('#step7Label .d-flex .d-flex').removeClass('btn-primary');
                     $('#step7Label .d-flex .d-flex').addClass('btn-light');
-                    $('.serviceType').html($('input[name="selectServiceType"]').val());
+                    $('.serviceType').html(totalData.ServiceType);
                     $('#step8Label .d-flex .d-flex').addClass('btn-success');
                 })
             });
@@ -579,9 +578,10 @@ $(document).ready(() => {
         }
     });
 
-    // STEP 8 - Presupuesto listo
-    // $('.progress-number .text-right .text-primary').html("100%");
-    totalPrice = amountCheckInProvince + amountCheckOutProvince + amountTruckType + amountServiceType;
-    $('#totalPrice').html(totalPrice);
+    var elementsTotalPrice = document.querySelectorAll(".totalPrice");
+    console.log(elementsTotalPrice);
+    elementsTotalPrice.forEach(x => {
+        x.innerHTML = totalData.amountCheckInProvince + totalData.amountCheckOutProvince + totalData.amountServiceType + totalData.amountTruckType;
+    });
 
 });

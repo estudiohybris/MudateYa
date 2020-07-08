@@ -315,35 +315,35 @@
                 </form>
             </div>
             <div class="col-12 col-md-8" id="step6">
-                <form name="step5">
+                <form name="step6">
                     <p>¡Excelente! ya falta poco...</p>
                     <h2>¿Qué tipo de camión necesitas?</h2> 
                     <div class="btn-group btn-group-md w-100" id="selectTruckType">
-                        <input type="button" id="selectTruckSM" name="selectTruckSM" class="btn btn-primary" value="Chico"/>
-                        <input type="button" id="selectTruckMD" name="selectTruckMD" class="btn btn-primary" value="Grande"/>
-                        <input type="button" id="selectTruckXL" name="selectTruckXL" class="btn btn-primary" value="Extra Grande"/>
+                        <input type="radio" id="selectTruckSM" name="selectTruckType" class="btn btn-primary" value="Chico"/>
+                        <input type="radio" id="selectTruckMD" name="selectTruckType" class="btn btn-primary" value="Grande"/>
+                        <input type="radio" id="selectTruckXL" name="selectTruckType" class="btn btn-primary" value="Extra Grande"/>
                     </div>
                     <button type="submit" class="btn btn-primary">Continuar</button>
                 </form>
             </div>
             <div class="col-12 col-md-8" id="step7">
-                <form name="step5">
+                <form name="step7">
                     <p>¡Último paso <span class="userName"></span>!!</p>
                     <h2>¿Qué servicio adicional necesitas?</h2> 
                     <div class="btn-group btn-group-md w-100" id="selectServiceType">
-                        <input type="button" id="selectServiceNull" name="selectServiceNull" class="selectServiceType" value="Ninguno"/>
-                        <input type="button" id="selectervicePacking" name="selectervicePacking" class="selectServiceType" value="Empaque"/>
-                        <input type="button" id="selectServiceUnpacking" name="selectServiceUnpacking" class="selectServiceType" value="Desempaque"/>
-                        <input type="button" id="selectServiceDuo" name="selectServiceDuo" class="selectServiceType" value="Ambos"/>
+                        <input type="radio" id="selectServiceNull" name="selectServiceType" class="btn btn-primary" value="Ninguno"/>
+                        <input type="radio" id="selectervicePacking" name="selectServiceType" class="btn btn-primary" value="Empaque"/>
+                        <input type="radio" id="selectServiceUnpacking" name="selectServiceType" class="btn btn-primary" value="Desempaque"/>
+                        <input type="radio" id="selectServiceDuo" name="selectServiceType" class="btn btn-primary" value="Ambos"/>
                     </div>
                     <button type="submit" class="btn btn-primary">Presupuestar</button>
                 </form>
             </div>
             <div class="col-12 col-md-8" id="step8">
-                <form name="step5">
+                <form name="step8">
                     <h2>Listo</h2>
                     <p>El presupuesto total es de:</p>
-                    <h2 id="totalPrice"></h2>
+                    <h2 class="totalPrice"></h2>
                     <p>¿Aceptas el presupuesto? Si lo aceptas te llamaremos por teléfono para terminar de coodinar</p>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
                     <a class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalSuccessfully" data-dismiss="modal">Aceptar</a>
@@ -367,11 +367,11 @@
     </main>
 
     <!-- js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
-    <script src="https://estudiohybris.github.io/MudateYa/assets/js/main.js"></script>
+    <script src="./assets/js/main.js"></script>
 
 </body>
 </html>
