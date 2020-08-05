@@ -1,0 +1,90 @@
+//- index.pug
+extends ../../layouts/layout
+
+block html_title
+    | MudateYa
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top.bg-white
+        .container
+            a.navbar-brand(href=`${hostname}/app/home/index.html`)
+                img.img-fluid(src=`${hostname}/assets/images/isologo.svg`, alt="MudateYa", style="height: 52px !important;")
+                MudateYa
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse(id="navbarText")
+                ul.navbar-nav.w-100.mt-2.mt-lg-0
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/home/index.html`) Home
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/services/services.html`) Servicios
+                    li.nav-item.active
+                        a.nav-link(href=`${hostname}/app/about/about.html`) Quienes Somos
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/faq/faq.html`) Preguntas Frecuentes
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/contact/contact.html`) Contacto
+                    li.nav-item.ml-auto
+                        a.btn.btn-primary(href=`${hostname}/app/presupuestar/presupuestar.html`) Presupuestar
+
+    section.container
+        .row
+            .col-12.text-center.text-lg-left
+                .mt-8.mb-4
+                    h2.text-primary.mb-2 ¡Elegí tu servicio adicional!
+            .col-lg-4
+                .card.shadow
+                    img.card-img-top.p-2(src=`${hostname}/assets/images/servicePacking.svg`, alt="Servicio de Empaque")
+                    .card-body
+                        h3.text-primary.text-center.mb-2 Empaque
+                        div
+                            p.mb-1
+                                strong Este servicio incluye:
+                            ul.list-unstyled.mb-2
+                                li
+                                    span.text-success ✓
+                                    span.ml-1 Empaque
+                            p.mb-1
+                                strong Este servicio no incluye:
+                            ul.list-unstyled.mb-0
+                                li
+                                    span.text-danger x
+                                    span.ml-1 Desempaque
+            .col-lg-4
+                .card.shadow
+                    img.card-img-top.p-2(src=`${hostname}/assets/images/serviceUnpacking.svg`, alt="Servicio de Desempaque")
+                    .card-body
+                        h3.text-primary.text-center.mb-2 Desempaque
+                        div
+                            p.mb-1
+                                strong Este servicio incluye:
+                            ul.list-unstyled.mb-2
+                                li
+                                    span.text-success ✓
+                                    span.ml-1 Desempaque
+                            p.mb-1
+                                strong Este servicio no incluye:
+                            ul.list-unstyled.mb-0
+                                li
+                                    span.text-danger x
+                                    span.ml-1 Empaque
+            .col-lg-4
+                .card.shadow(style="height:100%;")
+                    img.card-img-top.p-2(src=`${hostname}/assets/images/serviceDuo.svg`, alt="Servicio de Empaque & Desempaque")
+                    .card-body
+                        h3.text-primary.text-center.mb-2 Ambos
+                        div
+                            p.mb-1
+                                strong Este servicio incluye:
+                            ul.list-unstyled.mb-0
+                                li
+                                    span.text-success ✓
+                                    span.ml-1 Empaque
+                                li
+                                    span.text-success ✓
+                                    span.ml-1 Desempaque
+
+    +section__friends
+
+    +section__footer

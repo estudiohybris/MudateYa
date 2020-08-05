@@ -1,0 +1,353 @@
+<!-- https://github.com/pugjs/pug/issues/631-->
+<!-- https://codepen.io/14islands/pen/QqXYrb?editors=1010-->
+<!-- https://codepen.io/DimWeb/pen/LzjbeO-->
+<!-- initialization-->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> MudateYa - Presupuestar
+        </title>
+        <link rel="shortcut icon" type="image/x-icon" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon.ico">
+        <link rel="mask-icon" href="https://estudiohybris.github.io/MudateYa/assets/favicons/favicon.svg" color="#ffffff">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#47B8D6">
+        <meta name="msapplication-TileImage" content="https://estudiohybris.github.io/MudateYa/assets/images/favicons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#47B8D6">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-startup-image" href="https://estudiohybris.github.io/MudateYa/assets/favicons/android-icon-192x192.png">
+        <meta name="description" content="MudateYa">
+        <meta name="keywords" content="mudanzas, propiedades, venta, compra, muebles">
+        <meta name="author" content="Estudio Hybris, nataliagiannantonio@gmail.com">
+        <meta name="copyright" content="Estudio Hybris">
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="url" content="http://www.estudiohybris.com.ar/">
+        <meta name="geo.placename" content="Buenos Aires">
+        <meta name="geo.region" content="AR">
+        <link rel="canonical" href="http://www.estudiohybris.com.ar/">
+        <meta property="og:locale" content="es_AR">
+        <meta property="og:url" content="http://www.estudiohybris.com.ar/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="MudateYa">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="https://estudiohybris.github.io/MudateYa/assets/shared.png">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="400">
+        <meta property="og:site_name" content="MudateYa">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
+        <link href="../../scss/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-white">
+                <div class="container d-flex justify-content-between"><a class="navbar-brand" href="https://estudiohybris.github.io/MudateYa/app/home/index.html"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/isologo.svg" alt="MudateYa" style="height: 52px !important;">
+                        <MudateYa></MudateYa>
+                    </a><a class="close" href="https://estudiohybris.github.io/MudateYa/app/home/index.html"><span aria-hidden="true">&times;</span></a></div>
+            </nav>
+            <section class="container">
+                <div class="row my-4">
+                    <div class="col-12 col-md-4 d-none d-lg-flex">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb flex-column">
+                                <li class="breadcrumb-item" id="step1Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">1</div><small class="mb-0 ml-2">Nombre</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <div class="font-weight-bold mb-0 ml-4 userName"></div>
+                                    </div>
+                                </li>
+                                <li class="breadcrumb-item" id="step2Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">2</div><small class="mb-0 ml-2">Dirección de origen</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <p class="font-weight-bold mb-0 ml-4 checkInAddress"></p>
+                                    </div>
+                                </li>
+                                <li class="breadcrumb-item" id="step3Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">3</div><small class="mb-0 ml-2">Fecha de origen</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <p class="font-weight-bold mb-0 ml-4 checkInDate"></p>
+                                    </div>
+                                </li>
+                                <li class="breadcrumb-item" id="step4Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">4</div><small class="mb-0 ml-2">Dirección de destino</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <p class="font-weight-bold mb-0 ml-4 checkOutAddress"></p>
+                                    </div>
+                                </li>
+                                <li class="breadcrumb-item" id="step5Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">5</div><small class="mb-0 ml-2">Fecha de destino</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <p class="font-weight-bold mb-0 ml-4 checkOutDate"></p>
+                                    </div>
+                                </li>
+                                <li class="breadcrumb-item" id="step6Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">6</div><small class="mb-0 ml-2">Tipo de Camión</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <p class="font-weight-bold mb-0 ml-4 truckType"></p>
+                                    </div>
+                                </li>
+                                <li class="breadcrumb-item" id="step7Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">7</div><small class="mb-0 ml-2">Servicio Adicional</small>
+                                    </div>
+                                    <div class="d-flex flex-row justify-content-between border-left ml-2 my-1" style="height: 2rem;">
+                                        <p class="font-weight-bold mb-0 ml-4 serviceType"></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <hr>
+                                </li>
+                                <div class="breadcrumb-item successfully" id="step8Label">
+                                    <div class="d-flex flex-row align-items-center">
+                                        <div class="d-flex justify-content-center align-items-center rounded-circle" style="width: 2rem; height: 2rem;">8</div><small class="mb-0 ml-2">Presupuesto</small>
+                                    </div>
+                                </div>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step1">
+                        <h2 class="text-primary mb-1">¡Bienvenido!</h2>
+                        <p class="mb-2">Primero queremos conocerte...</p>
+                        <form class="mb-8" name="step1">
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <label for="inputFirstName">Nombre</label>
+                                    <input class="form-control" type="text" id="inputFirstName" name="inputFirstName" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputLastName">Apellido</label>
+                                    <input class="form-control" type="text" id="inputLastName" name="inputLastName" required>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <label for="inputMail">Correo electrónico</label>
+                                    <input class="form-control" type="mail" id="inputMail" name="inputMail" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputLastName">Teléfono</label>
+                                    <input class="form-control" type="tel" id="inputPhone" name="inputPhone" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-4" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step2">
+                        <h2 class="text-primary mb-2">¿Cuál es la dirección de origen?</h2>
+                        <form class="mb-8" name="step2">
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <label for="selectCheckInProvince">Provincia</label>
+                                    <select class="form-control" id="selectCheckInProvince" name="selectCheckInProvince" required>
+                                        <option value="0">Selecciona la provincia...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="selectCheckInTown">Localidad</label>
+                                    <select class="form-control" id="selectCheckInTown" name="selectCheckInTown">
+                                        <option value="0" disabled selected>Selecciona la localidad...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="inputCheckInStreet">Calle/Avenida</label>
+                                    <input class="form-control" type="text" id="inputCheckInStreet" name="inputCheckInStreet" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCheckInNumber">Número</label>
+                                    <input class="form-control" type="number" id="inputCheckInNumber" name="inputCheckInNumber" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCheckInFloor">Piso/Depto<small class="text-muted ml-1">(opcional)</small></label>
+                                    <input class="form-control" type="text" id="inputCheckInFloor" name="inputCheckInFloor" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCheckInPostalCode">Código postal</label>
+                                    <input class="form-control" type="number" id="inputCheckInPostalCode" name="inputCheckInPostalCode" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-4" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step3">
+                        <h2 class="text-primary mb-2">¿Cuál es la fecha de origen?</h2>
+                        <form class="mb-8" name="step3">
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <label for="inputCheckInDate">Fecha</label>
+                                    <input class="form-control" type="date" id="inputCheckInDate" name="inputCheckInDate" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputCheckInTime">Hora</label>
+                                    <input class="form-control" type="time" id="inputCheckInTime" name="inputCheckInTime" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-4" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step4">
+                        <h2 class="text-primary mb-2">¿Cuál es la dirección de destino?</h2>
+                        <form class="mb-8" name="step4">
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <label for="selectCheckOutProvince">Provincia</label>
+                                    <select class="form-control" id="selectCheckOutProvince" name="selectCheckOutProvince" required>
+                                        <option value="0" disabled selected>Selecciona la localidad...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="selectCheckOutTown">Localidad</label>
+                                    <select class="form-control" id="selectCheckOutTown" name="selectCheckOutTown">
+                                        <option value="0" disabled selected>Selecciona la localidad...</option>
+                                    </select>
+                                </div>
+                                <div class="form-group col-12">
+                                    <label for="inputCheckOutStreet">Calle/Avenida</label>
+                                    <input class="form-control" type="text" id="inputCheckOutStreet" name="inputCheckOutStreet" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCheckOutNumber">Número</label>
+                                    <input class="form-control" type="number" id="inputCheckOutNumber" name="inputCheckOutNumber" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCheckOutFloor">Piso/Depto<small class="text-muted ml-1">(opcional)</small></label>
+                                    <input class="form-control" type="text" id="inputCheckOutFloor" name="inputCheckOutFloor" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <label for="inputCheckOutPostalCode">Código postal</label>
+                                    <input class="form-control" type="number" id="inputCheckOutPostalCode" name="inputCheckOutPostalCode" required>
+                                    <button class="btn btn-primary mt-4" type="submit">Continuar</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step5">
+                        <form class="mb-8" name="step5">
+                            <h2 class="text-primary mb-2">¿Cuál es la fecha de destino?</h2>
+                            <div class="form-row">
+                                <div class="form-group col-lg-6">
+                                    <label for="inputCheckOutDate">Fecha</label>
+                                    <input class="form-control" type="date" id="inputCheckOutDate" name="inputCheckOutDate" required>
+                                </div>
+                                <div class="form-group col-lg-6">
+                                    <label for="inputCheckOutTime">Hora</label>
+                                    <input class="form-control" type="time" id="inputCheckOutTime" name="inputCheckOutTime" required>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary mt-4" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step6">
+                        <form class="mb-8" name="step6">
+                            <p class="mb-1">¡Excelente! ya falta poco...</p>
+                            <h2 class="text-primary mb-2">¿Qué tipo de camión necesitas?</h2>
+                            <div class="btn-group btn-group-md w-100" id="selectTruckType">
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectTruckSM" name="selectTruckType" value="Chico"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/truckSmall.svg" alt="Chico" style="height: 130px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Camión Chico</h4>
+                                </label>
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectTruckMD" name="selectTruckType" value="Mediano"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/truckMedium.svg" alt="Mediano" style="height: 130px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Camión Mediano</h4>
+                                </label>
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectTruckXL" name="selectTruckType" value="Grande"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/truckLarge.svg" alt="Grande" style="height: 130px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Camión Grande</h4>
+                                </label>
+                            </div>
+                            <button class="btn btn-primary mt-4" type="submit">Continuar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step7">
+                        <form class="mb-8" name="step7">
+                            <p class="mb-1">¡Último paso!</p>
+                            <h2 class="text-primary mb-2">¿Qué servicio adicional necesitas?</h2>
+                            <div class="btn-group btn-group-md w-100" id="selectServiceType">
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectServiceNull" name="selectServiceType" value="Ninguno"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/serviceNull.svg" alt="Ninguno" style="height: 100px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Ningun Servicio</h4>
+                                </label>
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectervicePacking" name="selectServiceType" value="Empaque"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/servicePacking.svg" alt="Empaque" style="height: 100px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Servicio de Empaque</h4>
+                                </label>
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectServiceUnpacking" name="selectServiceType" value="Desempaque"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/serviceUnpacking.svg" alt="Desempaque" style="height: 100px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Servicio de Desempaque</h4>
+                                </label>
+                                <label class="mx-1 mb-0 d-flex flex-column justiry-content-center">
+                                    <input class="form-control" type="radio" id="selectServiceDuo" name="selectServiceType" value="Ambos"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/serviceDuo.svg" alt="Ambos" style="height: 100px;">
+                                    <h4 class="text-primary mt-1 mb-0 text-center">Ambos Servicios</h4>
+                                </label>
+                            </div>
+                            <button class="btn btn-primary mt-4" type="submit">Presupuestar</button>
+                        </form>
+                    </div>
+                    <div class="col-12 col-lg-8" id="step8">
+                        <form class="text-center mb-8" name="step8">
+                            <h2 class="text-primary mb-2">¡Listo!</h2>
+                            <p class="mb-1">El presupuesto total es de:</p>
+                            <h2 class="totalPrice mb-4" style="font-size: 3rem;">$ </h2>
+                            <button class="btn btn-outline-danger ml-2" type="button" data-toggle="modal" data-target="#modalCanceled" data-dismiss="modal">Cancelar</button>
+                            <button class="btn btn-success ml-2" type="button" data-toggle="modal" data-target="#modalSuccessfully" data-dismiss="modal">Aceptar</button>
+                        </form>
+                        <div class="modal fade" id="modalSuccessfully" tabindex="-1" role="dialog" aria-labelledby="modalSuccessfullyLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body text-center"><img class="img-fluid mt-2 mb-4" src="https://estudiohybris.github.io/MudateYa/assets/images/alertSuccess.svg" alt="¡Felicitaciones!" style="height: 100px;">
+                                        <h2 class="text-success mb-1">¡Felicitaciones!</h2>
+                                        <p>La mudanza ha sido confirmada. En cualquier momento nos estaremos comunicando por teléfono para ultimar detalles.</p>
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center"><a class="btn btn-primary" href="https://estudiohybris.github.io/MudateYa/app/home/index.html">Continuar</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal fade" id="modalCanceled" tabindex="-1" role="dialog" aria-labelledby="modalCanceledLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-body text-center"><img class="img-fluid mt-2 mb-4" src="https://estudiohybris.github.io/MudateYa/assets/images/alertDanger.svg" alt="Cancelar Mudanza" style="height: 100px;">
+                                        <h2 class="text-danger mb-1">Cancelar Mudanza</h2>
+                                        <p>Vas a cancelar la mudanza ¿Confirmas que vas a cancelarla?</p>
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-center"><a class="btn btn-primary" href="https://estudiohybris.github.io/MudateYa/app/home/index.html">Continuar</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+        <script src="https://estudiohybris.github.io/MudateYa/assets/js/main.js"></script>
+        <script type="text/javascript" src="../../main.bundle.js"></script>
+    </body>
+
+</html>

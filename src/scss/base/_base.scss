@@ -1,0 +1,33 @@
+@import "../abstracts/abstracts-module";
+
+body {
+	padding-right: 0 !important;
+	width: 100%;
+	height: 100%;
+}
+
+section.container-fluid.bg-light{
+	padding-top: $spacer *5;
+	padding-bottom: $spacer *5;
+}
+
+// Universal
+// * {
+//  	outline: 0.1px solid lightgray;
+// }
+*:focus,
+*.focus {
+	box-shadow: none !important;
+	outline: none !important;
+}
+*::-moz-focus-inner {
+	border: 0;
+	outline: none !important;
+}
+
+// Selection
+::selection,
+::moz-selection {
+	color: $white;
+	background-color: lighten($primary, 10%);
+}

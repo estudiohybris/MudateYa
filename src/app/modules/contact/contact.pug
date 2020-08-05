@@ -1,0 +1,70 @@
+//- index.pug
+extends ../../layouts/layout
+
+block html_title
+    | MudateYa
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top.bg-white
+        .container
+            a.navbar-brand(href=`${hostname}/app/home/index.html`)
+                img.img-fluid(src=`${hostname}/assets/images/isologo.svg`, alt="MudateYa", style="height: 52px !important;")
+                MudateYa
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse(id="navbarText")
+                ul.navbar-nav.w-100.mt-2.mt-lg-0
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/home/index.html`) Home
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/services/services.html`) Servicios
+                    li.nav-item.active
+                        a.nav-link(href=`${hostname}/app/about/about.html`) Quienes Somos
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/faq/faq.html`) Preguntas Frecuentes
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/contact/contact.html`) Contacto
+                    li.nav-item.ml-auto
+                        a.btn.btn-primary(href=`${hostname}/app/presupuestar/presupuestar.html`) Presupuestar
+
+    section.container
+        .row
+            .col-12.text-center.text-lg-left
+                .mt-8.mb-4
+                    h2.text-primary.mb-2 Contáctenos
+            .col-12.col-lg-6
+                p Estaremos encantados de recibir sus inquietudes y responder sus preguntas.
+                form(action="")
+                    .form-group
+                        input.form-control(type="text",placeholder="Nombre y Apellido (*)")
+                    .form-row
+                        .form-group.col-12.col-sm-6
+                            input.form-control(type="text",placeholder="Dirección")
+                        .form-group.col-12.col-sm-6
+                            input.form-control(type="text",placeholder="Código Postal")
+                    .form-row
+                        .form-group.col-12.col-sm-6
+                            input.form-control(type="text",placeholder="Provincia")
+                        .form-group.col-12.col-sm-6
+                            input.form-control(type="text",placeholder="País")
+                    .form-row
+                        .form-group.col-12.col-sm-6
+                            input.form-control(type="text",placeholder="Teléfono")
+                        .form-group.col-12.col-sm-6
+                            input.form-control(type="text",placeholder="Celular")
+                    .form-group
+                        input.form-control(type="text",placeholder="E-mail (*)")
+                    .form-group
+                        textarea.form-control(rows="3", placeholder="Mensaje (*)")
+                    .form-group
+                        .custom-control.custom-checkbox
+                            input.custom-control-input(type="checkbox", id="checkContact")
+                            label.custom-control-label(for="checkContact") Deseo recibir emails con información y novedades sobre MudateYa.
+                    button.btn.btn-primary(type="submit") Enviar mensaje
+            .col-12.col-lg-6
+                img.img-fluid.w-100(src=`${hostname}/assets/images/cover.svg`, alt="Tu mudanza al instante")
+
+    +section__friends
+
+    +section__footer

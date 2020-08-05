@@ -1,0 +1,39 @@
+mixin section__footer
+    footer.container-fluid.bg-black.mt-8
+        .row
+            .col-12
+                .container
+                    .row.pt-8.pb-7
+                        .col-12.col-lg-3.text-center.text-lg-left
+                            img.img-fluid(src=`${hostname}/assets/images/logoWhite.svg`, alt="MudateYa", style="height:40px;")
+                            div.mt-1
+                                a(href="https://es-la.facebook.com/EstudioHybris/", target="_blank")
+                                    img.img-fluid(src=`${hostname}/assets/images/iconFacebook.svg`, alt="Facebook", style="height:40px;")
+                                a(href="https://www.linkedin.com/in/nataliagiannantonio/", target="_blank")
+                                    img.img-fluid(src=`${hostname}/assets/images/iconLinkedin.svg`, alt="Linkedin", style="height:40px;")
+                        .col-12.col-lg-3.text-center.text-lg-left.mt-4.mt-lg-0
+                            h4.text-secondary.mb-1 Nosotros
+                            ul.list-unstyled.mb-0
+                                li.mb-1
+                                    a.text-white(href=`${hostname}/app/about/about.html`) Quienes Somos
+                                li
+                                    a.text-white(href="javascript:void(0)") Blog
+                        .col-12.col-lg-3.text-center.text-lg-left.mt-4.mt-lg-0
+                            h4.text-secondary.mb-1 Ayuda
+                            ul.list-unstyled.mb-0
+                                li.mb-1
+                                    a.text-white(href=`${hostname}/app/faq/faq.html`) Preguntas frecuentes
+                                li
+                                    a.text-white(href=`${hostname}/app/contact/contact.html`) Contacto
+                        .col-12.col-lg-3.text-center.text-lg-left.mt-4.mt-lg-0
+                            h4.text-secondary.mb-1 Legales
+                            ul.list-unstyled.mb-0
+                                li.mb-1
+                                    a.text-white(href="javascript:void(0)") Términos y condiciones
+                                li
+                                    a.text-white(href="javascript:void(0)") Política de privacidad
+                    .row
+                        .col-12
+                            hr.border-top.border-primary
+                        .col-12.text-center.text-lg-left.mb-1
+                            small.text-white © 2020 - Todos los derechos reservados

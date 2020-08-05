@@ -1,0 +1,26 @@
+@import "../abstracts/abstracts-module";
+
+.img--cheese {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & > img {
+        background-color: #fff;
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        margin-bottom: $spacer;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    p {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        margin-bottom: 0;
+    }
+
+}

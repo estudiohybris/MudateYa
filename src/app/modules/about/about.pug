@@ -1,0 +1,46 @@
+//- index.pug
+extends ../../layouts/layout
+
+block html_title
+    | MudateYa
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top.bg-white
+        .container
+            a.navbar-brand(href=`${hostname}/app/home/index.html`)
+                img.img-fluid(src=`${hostname}/assets/images/isologo.svg`, alt="MudateYa", style="height: 52px !important;")
+                MudateYa
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse(id="navbarText")
+                ul.navbar-nav.w-100.mt-2.mt-lg-0
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/home/index.html`) Home
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/services/services.html`) Servicios
+                    li.nav-item.active
+                        a.nav-link(href=`${hostname}/app/about/about.html`) Quienes Somos
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/faq/faq.html`) Preguntas Frecuentes
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/contact/contact.html`) Contacto
+                    li.nav-item.ml-auto
+                        a.btn.btn-primary(href=`${hostname}/app/presupuestar/presupuestar.html`) Presupuestar
+
+    section.container
+        .row
+            .col-12.text-center.text-lg-left
+                .mt-8.mb-4
+                    h2.text-primary.mb-2 MudateYa
+        .row
+            .col-12.col-lg-6.mb-4.mb-lg-0
+                p Donec auctor nunc ut lacus pellentesque, rhoncus sollicitudin mauris lobortis. Nam dictum magna dignissim pulvinar fringilla. Donec blandit commodo enim sed auctor. Etiam cursus mauris id luctus vehicula. Quisque at quam quis ex placerat ultricies at sit amet mi. Mauris faucibus, dolor nec condimentum auctor, ipsum ipsum iaculis arcu, id feugiat dui ex quis nibh. Nam condimentum metus at enim accumsan, vitae placerat massa finibus.
+                p Fusce eu imperdiet elit, ut finibus urna. Maecenas sit amet enim nibh. Morbi a efficitur nunc. Vestibulum eu condimentum lectus. Mauris lorem nunc, faucibus a nibh sit amet, luctus aliquam ipsum. Duis lacinia rhoncus auctor. Suspendisse euismod lacus ut lectus interdum varius. Donec egestas elementum lacus quis tristique.
+                p Ut fringilla lacus at congue rhoncus. Vestibulum et nunc nibh. Integer vel elit vitae neque mattis hendrerit. Vivamus condimentum leo cursus velit tempor ornare. Nullam mollis metus leo, vel hendrerit tellus vehicula eu. Aliquam erat volutpat. Morbi id arcu id eros consectetur suscipit at eu quam. Sed vulputate metus vitae tempus egestas. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Duis ligula nunc, suscipit vitae ex ullamcorper, fringilla tincidunt lacus. Donec ut aliquet tellus.
+            .col-12.col-lg-6
+                img.img-fluid.w-100(src=`${hostname}/assets/images/cover.svg`, alt="Tu mudanza al instante")
+
+    +section__friends
+
+    +section__footer

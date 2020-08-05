@@ -1,0 +1,75 @@
+//- index.pug
+extends ../../layouts/layout
+
+block html_title
+    | MudateYa
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top.bg-white
+        .container
+            a.navbar-brand(href=`${hostname}/app/home/index.html`)
+                img.img-fluid(src=`${hostname}/assets/images/isologo.svg`, alt="MudateYa", style="height: 52px !important;")
+                MudateYa
+            button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarText", aria-controls="navbarText", aria-expanded="false", aria-label="Toggle navigation")
+                span.navbar-toggler-icon
+            .collapse.navbar-collapse(id="navbarText")
+                ul.navbar-nav.w-100.mt-2.mt-lg-0
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/home/index.html`) Home
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/services/services.html`) Servicios
+                    li.nav-item.active
+                        a.nav-link(href=`${hostname}/app/about/about.html`) Quienes Somos
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/faq/faq.html`) Preguntas Frecuentes
+                    li.nav-item
+                        a.nav-link(href=`${hostname}/app/contact/contact.html`) Contacto
+                    li.nav-item.ml-auto
+                        a.btn.btn-primary(href=`${hostname}/app/presupuestar/presupuestar.html`) Presupuestar
+
+    section.container
+        .row
+            .col-lg-7.text-center.text-lg-left
+                .my-8
+                    h1.text-primary.mb-2 Somos un servicio de flete distinto. Podés confiar.
+                    p.mb-0 En MudateYa estamos para ayudarte las 24 hs.
+                .mb-8
+                    a.btn.btn-outline-secondary.mt-2.mt-lg-0(href="https://wa.me/5211234567890?text=Hola!%20Me%20gustaría%20saber%20el%20presupuesto%20de%20una%20mudanza!") Presupuestar Whatsapp
+                    a.btn.btn-secondary.mt-2.mt-lg-0.ml-0.ml-2(href=`${hostname}/app/presupuestar/presupuestar.html`) Presupuestar
+            .col-lg-5.d-flex.justifity-content-center
+                img.img-fluid.w-100.mb-8.mb-lg-0(src=`${hostname}/assets/images/cover.svg`, alt="Tu mudanza al instante")
+
+    section.container-fluid.py-4(style="background-color:rgb(96 56 19 / 0.1);")
+        .row
+            .col-12
+                .container
+                    .row
+                        .col-12.d-flex.flex-column.text-center.text-md-left
+                            h2.text-primary.mt-4.mb-2 ¿Cómo contratar MudateYa?
+                            p.mb-4 ¡Es súper cómodo! Podés hacerlo desde la web, desde donde estés.
+                        .col-12.d-flex.flex-column.flex-lg-row.justify-content-center.mb-4
+                            .d-flex.flex-column.text-center
+                                .px-2
+                                    img.img-fluid(src=`${hostname}/assets/images/select-plan.svg`, alt="Cargá el origen y destino de la mudanza.", style="width: auto; height: 100px;")
+                                    h4.mt-2.mb-0 Paso 1
+                                    p.mb-0 Cargá el origen y destino de la mudanza.
+                            .d-flex.flex-column.text-center
+                                .px-2.mt-4.mt-lg-0
+                                    img.img-fluid(src=`${hostname}/assets/images/select-car.svg`, alt="Seleccioná el tipo de camión.", style="width: auto; height: 100px;")
+                                    h4.mt-2.mb-0 Paso 2
+                                    p.mb-0 Seleccioná el tipo de camión.
+                            .d-flex.flex-column.text-center
+                                .px-2.mt-4.mt-lg-0
+                                    img.img-fluid(src=`${hostname}/assets/images/select-servicies.svg`, alt="Seleccioná el tipo de servicio.", style="width: auto; height: 100px;")
+                                    h4.mt-2.mb-0 Paso 3
+                                    p.mb-0 Seleccioná el tipo de servicio.
+                            .d-flex.flex-column.text-center
+                                .px-2.mt-4.mt-lg-0
+                                    img.img-fluid(src=`${hostname}/assets/images/select-done.svg`, alt="¡Listo! Ya tenés tu mudanza confirmada", style="width: auto; height: 100px;")
+                                    h4.mt-2.mb-0 Paso 4
+                                    p.mb-0 ¡Listo! Ya tenés tu mudanza confirmada.
+
+    +section__friends
+
+    +section__footer

@@ -1,0 +1,186 @@
+<!-- https://github.com/pugjs/pug/issues/631-->
+<!-- https://codepen.io/14islands/pen/QqXYrb?editors=1010-->
+<!-- https://codepen.io/DimWeb/pen/LzjbeO-->
+<!-- initialization-->
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title> MudateYa
+        </title>
+        <link rel="shortcut icon" type="image/x-icon" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon.ico">
+        <link rel="mask-icon" href="https://estudiohybris.github.io/MudateYa/assets/favicons/favicon.svg" color="#ffffff">
+        <link rel="apple-touch-icon" sizes="57x57" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://estudiohybris.github.io/MudateYa/assets/images/favicons/favicon-16x16.png">
+        <meta name="msapplication-TileColor" content="#47B8D6">
+        <meta name="msapplication-TileImage" content="https://estudiohybris.github.io/MudateYa/assets/images/favicons/ms-icon-144x144.png">
+        <meta name="theme-color" content="#47B8D6">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="apple-touch-startup-image" href="https://estudiohybris.github.io/MudateYa/assets/favicons/android-icon-192x192.png">
+        <meta name="description" content="MudateYa">
+        <meta name="keywords" content="mudanzas, propiedades, venta, compra, muebles">
+        <meta name="author" content="Estudio Hybris, nataliagiannantonio@gmail.com">
+        <meta name="copyright" content="Estudio Hybris">
+        <meta name="robots" content="noindex,nofollow">
+        <meta name="url" content="http://www.estudiohybris.com.ar/">
+        <meta name="geo.placename" content="Buenos Aires">
+        <meta name="geo.region" content="AR">
+        <link rel="canonical" href="http://www.estudiohybris.com.ar/">
+        <meta property="og:locale" content="es_AR">
+        <meta property="og:url" content="http://www.estudiohybris.com.ar/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="MudateYa">
+        <meta property="og:description" content="">
+        <meta property="og:image" content="https://estudiohybris.github.io/MudateYa/assets/shared.png">
+        <meta property="og:image:width" content="400">
+        <meta property="og:image:height" content="400">
+        <meta property="og:site_name" content="MudateYa">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&amp;display=swap" rel="stylesheet">
+        <link href="../../scss/main.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <nav class="navbar navbar-expand-lg navbar-light sticky-top bg-white">
+                <div class="container"><a class="navbar-brand" href="https://estudiohybris.github.io/MudateYa/app/home/index.html"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/isologo.svg" alt="MudateYa" style="height: 52px !important;">
+                        <MudateYa></MudateYa>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav w-100 mt-2 mt-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="https://estudiohybris.github.io/MudateYa/app/home/index.html">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://estudiohybris.github.io/MudateYa/app/services/services.html">Servicios</a></li>
+                            <li class="nav-item active"><a class="nav-link" href="https://estudiohybris.github.io/MudateYa/app/about/about.html">Quienes Somos</a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://estudiohybris.github.io/MudateYa/app/faq/faq.html">Preguntas Frecuentes</a></li>
+                            <li class="nav-item"><a class="nav-link" href="https://estudiohybris.github.io/MudateYa/app/contact/contact.html">Contacto</a></li>
+                            <li class="nav-item ml-auto"><a class="btn btn-primary" href="https://estudiohybris.github.io/MudateYa/app/presupuestar/presupuestar.html">Presupuestar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <section class="container">
+                <div class="row">
+                    <div class="col-lg-7 text-center text-lg-left">
+                        <div class="my-8">
+                            <h1 class="text-primary mb-2">Somos un servicio de flete distinto. Podés confiar.</h1>
+                            <p class="mb-0">En MudateYa estamos para ayudarte las 24 hs.</p>
+                        </div>
+                        <div class="mb-8"><a class="btn btn-outline-secondary mt-2 mt-lg-0" href="https://wa.me/5211234567890?text=Hola!%20Me%20gustaría%20saber%20el%20presupuesto%20de%20una%20mudanza!">Presupuestar Whatsapp</a><a class="btn btn-secondary mt-2 mt-lg-0 ml-0 ml-2" href="https://estudiohybris.github.io/MudateYa/app/presupuestar/presupuestar.html">Presupuestar</a></div>
+                    </div>
+                    <div class="col-lg-5 d-flex justifity-content-center"><img class="img-fluid w-100 mb-8 mb-lg-0" src="https://estudiohybris.github.io/MudateYa/assets/images/cover.svg" alt="Tu mudanza al instante"></div>
+                </div>
+            </section>
+            <section class="container-fluid py-4" style="background-color:rgb(96 56 19 / 0.1);">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-12 d-flex flex-column text-center text-md-left">
+                                    <h2 class="text-primary mt-4 mb-2">¿Cómo contratar MudateYa?</h2>
+                                    <p class="mb-4">¡Es súper cómodo! Podés hacerlo desde la web, desde donde estés.</p>
+                                </div>
+                                <div class="col-12 d-flex flex-column flex-lg-row justify-content-center mb-4">
+                                    <div class="d-flex flex-column text-center">
+                                        <div class="px-2"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/select-plan.svg" alt="Cargá el origen y destino de la mudanza." style="width: auto; height: 100px;">
+                                            <h4 class="mt-2 mb-0">Paso 1</h4>
+                                            <p class="mb-0">Cargá el origen y destino de la mudanza.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column text-center">
+                                        <div class="px-2 mt-4 mt-lg-0"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/select-car.svg" alt="Seleccioná el tipo de camión." style="width: auto; height: 100px;">
+                                            <h4 class="mt-2 mb-0">Paso 2</h4>
+                                            <p class="mb-0">Seleccioná el tipo de camión.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column text-center">
+                                        <div class="px-2 mt-4 mt-lg-0"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/select-servicies.svg" alt="Seleccioná el tipo de servicio." style="width: auto; height: 100px;">
+                                            <h4 class="mt-2 mb-0">Paso 3</h4>
+                                            <p class="mb-0">Seleccioná el tipo de servicio.</p>
+                                        </div>
+                                    </div>
+                                    <div class="d-flex flex-column text-center">
+                                        <div class="px-2 mt-4 mt-lg-0"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/select-done.svg" alt="¡Listo! Ya tenés tu mudanza confirmada" style="width: auto; height: 100px;">
+                                            <h4 class="mt-2 mb-0">Paso 4</h4>
+                                            <p class="mb-0">¡Listo! Ya tenés tu mudanza confirmada.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-row mt-8 rounded" style="background-color: #d2eaf9;">
+                        <div class="w-50 d-flex justify-content-center"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/selfie.svg" alt="MudateYa recomendanos" /></div>
+                        <div class="w-50 text-center text-md-left d-flex flex-column justify-content-center align-items-center px-4">
+                            <h2 class="text-primary mb-2">Referí a un amigo y te regalamos el empaque.</h2>
+                            <button class="btn btn-secondary" type="button">Ver más</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="container-fluid bg-black mt-8">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="container">
+                            <div class="row pt-8 pb-7">
+                                <div class="col-12 col-lg-3 text-center text-lg-left"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/logoWhite.svg" alt="MudateYa" style="height:40px;" />
+                                    <div class="mt-1"><a href="https://es-la.facebook.com/EstudioHybris/" target="_blank"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/iconFacebook.svg" alt="Facebook" style="height:40px;" /></a><a href="https://www.linkedin.com/in/nataliagiannantonio/" target="_blank"><img class="img-fluid" src="https://estudiohybris.github.io/MudateYa/assets/images/iconLinkedin.svg" alt="Linkedin" style="height:40px;" /></a></div>
+                                </div>
+                                <div class="col-12 col-lg-3 text-center text-lg-left mt-4 mt-lg-0">
+                                    <h4 class="text-secondary mb-1">Nosotros</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-1"><a class="text-white" href="https://estudiohybris.github.io/MudateYa/app/about/about.html">Quienes Somos</a></li>
+                                        <li><a class="text-white" href="javascript:void(0)">Blog</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-3 text-center text-lg-left mt-4 mt-lg-0">
+                                    <h4 class="text-secondary mb-1">Ayuda</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-1"><a class="text-white" href="https://estudiohybris.github.io/MudateYa/app/faq/faq.html">Preguntas frecuentes</a></li>
+                                        <li><a class="text-white" href="https://estudiohybris.github.io/MudateYa/app/contact/contact.html">Contacto</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-3 text-center text-lg-left mt-4 mt-lg-0">
+                                    <h4 class="text-secondary mb-1">Legales</h4>
+                                    <ul class="list-unstyled mb-0">
+                                        <li class="mb-1"><a class="text-white" href="javascript:void(0)">Términos y condiciones</a></li>
+                                        <li><a class="text-white" href="javascript:void(0)">Política de privacidad</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <hr class="border-top border-primary" />
+                                </div>
+                                <div class="col-12 text-center text-lg-left mb-1"><small class="text-white">© 2020 - Todos los derechos reservados</small></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </main>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.min.js"></script>
+        <script src="https://estudiohybris.github.io/MudateYa/assets/js/main.js"></script>
+        <script type="text/javascript" src="../../main.bundle.js"></script>
+    </body>
+
+</html>

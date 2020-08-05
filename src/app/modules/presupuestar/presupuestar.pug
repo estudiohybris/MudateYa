@@ -1,0 +1,229 @@
+//- index.pug
+extends ../../layouts/layout
+
+block html_title
+    | MudateYa - Presupuestar
+
+block content
+
+    nav.navbar.navbar-expand-lg.navbar-light.sticky-top.bg-white
+        .container.d-flex.justify-content-between
+            a.navbar-brand(href=`${hostname}/app/home/index.html`)
+                img.img-fluid(src=`${hostname}/assets/images/isologo.svg`, alt="MudateYa", style="height: 52px !important;")
+                MudateYa
+            a.close(href=`${hostname}/app/home/index.html`)
+                span(aria-hidden="true") &times;
+
+    section.container
+        .row.my-4
+            .col-12.col-md-4.d-none.d-lg-flex
+                nav(aria-label="breadcrumb")
+                    ol.breadcrumb.flex-column
+                        li.breadcrumb-item(id="step1Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 1
+                                small.mb-0.ml-2 Nombre
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                .font-weight-bold.mb-0.ml-4.userName
+                        li.breadcrumb-item(id="step2Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 2
+                                small.mb-0.ml-2 Dirección de origen
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                p.font-weight-bold.mb-0.ml-4.checkInAddress
+                        li.breadcrumb-item(id="step3Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 3
+                                small.mb-0.ml-2 Fecha de origen
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                p.font-weight-bold.mb-0.ml-4.checkInDate
+                        li.breadcrumb-item(id="step4Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 4
+                                small.mb-0.ml-2 Dirección de destino
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                p.font-weight-bold.mb-0.ml-4.checkOutAddress
+                        li.breadcrumb-item(id="step5Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 5
+                                small.mb-0.ml-2 Fecha de destino
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                p.font-weight-bold.mb-0.ml-4.checkOutDate
+                        li.breadcrumb-item(id="step6Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 6
+                                small.mb-0.ml-2 Tipo de Camión
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                p.font-weight-bold.mb-0.ml-4.truckType
+                        li.breadcrumb-item(id="step7Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 7
+                                small.mb-0.ml-2 Servicio Adicional
+                            .d-flex.flex-row.justify-content-between.border-left.ml-2.my-1(style="height: 2rem;")
+                                p.font-weight-bold.mb-0.ml-4.serviceType
+                        li
+                            hr
+                        .breadcrumb-item.successfully(id="step8Label")
+                            .d-flex.flex-row.align-items-center
+                                .d-flex.justify-content-center.align-items-center.rounded-circle(style="width: 2rem; height: 2rem;") 8
+                                small.mb-0.ml-2 Presupuesto
+            .col-12.col-lg-8(id="step1")
+                h2.text-primary.mb-1 ¡Bienvenido!
+                p.mb-2 Primero queremos conocerte...
+                form.mb-8(name="step1")
+                    .form-row
+                        .form-group.col-lg-6
+                            label(for="inputFirstName") Nombre
+                            input.form-control(type="text", id="inputFirstName", name="inputFirstName", required)
+                        .form-group.col-lg-6
+                            label(for="inputLastName") Apellido
+                            input.form-control(type="text", id="inputLastName", name="inputLastName", required)
+                    .form-row
+                        .form-group.col-lg-6
+                            label(for="inputMail") Correo electrónico
+                            input.form-control(type="mail", id="inputMail", name="inputMail", required)
+                        .form-group.col-lg-6
+                            label(for="inputLastName") Teléfono
+                            input.form-control(type="tel", id="inputPhone", name="inputPhone", required)
+                    button.btn.btn-primary.mt-4(type="submit") Continuar
+            .col-12.col-lg-8(id="step2")
+                h2.text-primary.mb-2 ¿Cuál es la dirección de origen?
+                form.mb-8(name="step2")
+                    .form-row
+                        .form-group.col-lg-6
+                            label(for="selectCheckInProvince") Provincia
+                            select.form-control(id="selectCheckInProvince", name="selectCheckInProvince", required)
+                                option(value="0") Selecciona la provincia...
+                        .form-group.col-lg-6
+                            label(for="selectCheckInTown") Localidad
+                            select.form-control(id="selectCheckInTown" name="selectCheckInTown")
+                                option(value="0", disabled, selected) Selecciona la localidad...
+                        .form-group.col-12
+                            label(for="inputCheckInStreet") Calle/Avenida
+                            input.form-control(type="text", id="inputCheckInStreet", name="inputCheckInStreet", required)
+                        .form-group.col-md-4
+                            label(for="inputCheckInNumber") Número
+                            input.form-control(type="number", id="inputCheckInNumber", name="inputCheckInNumber", required)
+                        .form-group.col-md-4
+                            label(for="inputCheckInFloor") Piso/Depto
+                                small.text-muted.ml-1 (opcional)
+                            input.form-control(type="text", id="inputCheckInFloor", name="inputCheckInFloor", required)
+                        .form-group.col-md-4
+                            label(for="inputCheckInPostalCode") Código postal
+                            input.form-control(type="number", id="inputCheckInPostalCode", name="inputCheckInPostalCode", required)
+                    button.btn.btn-primary.mt-4(type="submit") Continuar
+            .col-12.col-lg-8(id="step3")
+                h2.text-primary.mb-2 ¿Cuál es la fecha de origen?
+                form.mb-8(name="step3")
+                    .form-row
+                        .form-group.col-lg-6
+                            label(for="inputCheckInDate") Fecha
+                            input.form-control(type="date", id="inputCheckInDate", name="inputCheckInDate", required)
+                        .form-group.col-lg-6
+                            label(for="inputCheckInTime") Hora
+                            input.form-control(type="time", id="inputCheckInTime", name="inputCheckInTime", required)
+                    button.btn.btn-primary.mt-4(type="submit") Continuar
+            .col-12.col-lg-8(id="step4")
+                h2.text-primary.mb-2 ¿Cuál es la dirección de destino?
+                form.mb-8(name="step4")
+                    .form-row
+                        .form-group.col-lg-6
+                            label(for="selectCheckOutProvince") Provincia
+                            select.form-control(id="selectCheckOutProvince", name="selectCheckOutProvince", required)
+                                option(value="0", disabled, selected) Selecciona la localidad...
+                        .form-group.col-lg-6
+                            label(for="selectCheckOutTown") Localidad
+                            select.form-control(id="selectCheckOutTown", name="selectCheckOutTown")
+                                option(value="0", disabled, selected) Selecciona la localidad...
+                        .form-group.col-12
+                            label(for="inputCheckOutStreet") Calle/Avenida
+                            input.form-control(type="text", id="inputCheckOutStreet", name="inputCheckOutStreet", required)
+                        .form-group.col-md-4
+                            label(for="inputCheckOutNumber") Número
+                            input.form-control(type="number", id="inputCheckOutNumber", name="inputCheckOutNumber", required)
+                        .form-group.col-md-4
+                            label(for="inputCheckOutFloor") Piso/Depto
+                                small.text-muted.ml-1 (opcional)
+                            input.form-control(type="text", id="inputCheckOutFloor", name="inputCheckOutFloor", required)
+                        .form-group.col-md-4
+                            label(for="inputCheckOutPostalCode") Código postal
+                            input.form-control(type="number", id="inputCheckOutPostalCode", name="inputCheckOutPostalCode", required)
+                            button.btn.btn-primary.mt-4(type="submit") Continuar
+            .col-12.col-lg-8(id="step5")
+                form.mb-8(name="step5")
+                    h2.text-primary.mb-2 ¿Cuál es la fecha de destino?
+                    .form-row
+                        .form-group.col-lg-6
+                            label(for="inputCheckOutDate") Fecha
+                            input.form-control(type="date", id="inputCheckOutDate", name="inputCheckOutDate", required)
+                        .form-group.col-lg-6
+                            label(for="inputCheckOutTime") Hora
+                            input.form-control(type="time", id="inputCheckOutTime", name="inputCheckOutTime", required)
+                    button.btn.btn-primary.mt-4(type="submit") Continuar
+            .col-12.col-lg-8(id="step6")
+                form.mb-8(name="step6")
+                    p.mb-1 ¡Excelente! ya falta poco...
+                    h2.text-primary.mb-2 ¿Qué tipo de camión necesitas?
+                    .btn-group.btn-group-md.w-100(id="selectTruckType")
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectTruckSM", name="selectTruckType", value="Chico")
+                            img.img-fluid(src=`${hostname}/assets/images/truckSmall.svg`, alt="Chico", style="height: 130px;")
+                            h4.text-primary.mt-1.mb-0.text-center Camión Chico
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectTruckMD", name="selectTruckType", value="Mediano")
+                            img.img-fluid(src=`${hostname}/assets/images/truckMedium.svg`, alt="Mediano", style="height: 130px;")
+                            h4.text-primary.mt-1.mb-0.text-center Camión Mediano
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectTruckXL", name="selectTruckType", value="Grande")
+                            img.img-fluid(src=`${hostname}/assets/images/truckLarge.svg`, alt="Grande", style="height: 130px;")
+                            h4.text-primary.mt-1.mb-0.text-center Camión Grande
+                    button.btn.btn-primary.mt-4(type="submit") Continuar
+            .col-12.col-lg-8(id="step7")
+                form.mb-8(name="step7")
+                    p.mb-1 ¡Último paso!
+                    h2.text-primary.mb-2 ¿Qué servicio adicional necesitas?
+                    .btn-group.btn-group-md.w-100(id="selectServiceType")
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectServiceNull", name="selectServiceType", value="Ninguno")
+                            img.img-fluid(src=`${hostname}/assets/images/serviceNull.svg`, alt="Ninguno", style="height: 100px;")
+                            h4.text-primary.mt-1.mb-0.text-center Ningun Servicio
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectervicePacking", name="selectServiceType", value="Empaque")
+                            img.img-fluid(src=`${hostname}/assets/images/servicePacking.svg`, alt="Empaque", style="height: 100px;")
+                            h4.text-primary.mt-1.mb-0.text-center Servicio de Empaque
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectServiceUnpacking", name="selectServiceType", value="Desempaque")
+                            img.img-fluid(src=`${hostname}/assets/images/serviceUnpacking.svg`, alt="Desempaque", style="height: 100px;")
+                            h4.text-primary.mt-1.mb-0.text-center Servicio de Desempaque
+                        label.mx-1.mb-0.d-flex.flex-column.justiry-content-center
+                            input.form-control(type="radio" id="selectServiceDuo", name="selectServiceType", value="Ambos")
+                            img.img-fluid(src=`${hostname}/assets/images/serviceDuo.svg`, alt="Ambos", style="height: 100px;")
+                            h4.text-primary.mt-1.mb-0.text-center Ambos Servicios
+                    button.btn.btn-primary.mt-4(type="submit") Presupuestar
+            .col-12.col-lg-8(id="step8")
+                form.text-center.mb-8(name="step8")
+                    h2.text-primary.mb-2 ¡Listo!
+                    p.mb-1 El presupuesto total es de:
+                    h2.totalPrice.mb-4(style="font-size: 3rem;") $ 
+                    button.btn.btn-outline-danger.ml-2(type="button", data-toggle="modal", data-target="#modalCanceled", data-dismiss="modal") Cancelar
+                    button.btn.btn-success.ml-2(type="button", data-toggle="modal", data-target="#modalSuccessfully", data-dismiss="modal") Aceptar
+
+                .modal.fade(id="modalSuccessfully", tabindex="-1", role="dialog", aria-labelledby="modalSuccessfullyLabel", aria-hidden="true")
+                    .modal-dialog.modal-dialog-centered
+                        .modal-content
+                            .modal-body.text-center
+                                img.img-fluid.mt-2.mb-4(src=`${hostname}/assets/images/alertSuccess.svg`, alt="¡Felicitaciones!", style="height: 100px;")
+                                h2.text-success.mb-1 ¡Felicitaciones!
+                                p La mudanza ha sido confirmada. En cualquier momento nos estaremos comunicando por teléfono para ultimar detalles.
+                            .modal-footer.d-flex.justify-content-center
+                                a.btn.btn-primary(href=`${hostname}/app/home/index.html`) Continuar
+
+                .modal.fade(id="modalCanceled", tabindex="-1", role="dialog", aria-labelledby="modalCanceledLabel", aria-hidden="true")
+                    .modal-dialog.modal-dialog-centered
+                        .modal-content
+                            .modal-body.text-center
+                                img.img-fluid.mt-2.mb-4(src=`${hostname}/assets/images/alertDanger.svg`, alt="Cancelar Mudanza", style="height: 100px;")
+                                h2.text-danger.mb-1 Cancelar Mudanza
+                                p Vas a cancelar la mudanza ¿Confirmas que vas a cancelarla?
+                            .modal-footer.d-flex.justify-content-center
+                                a.btn.btn-primary(href=`${hostname}/app/home/index.html`) Continuar
